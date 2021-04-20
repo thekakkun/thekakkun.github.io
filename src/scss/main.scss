@@ -1,13 +1,13 @@
 @font-face {
     font-family: "Source Sans";
-    src: url('./fonts/SourceSans3VF-Roman.otf.woff') format("woff"),
-    url('./fonts/SourceSans3VF-Roman.otf.woff2') format("woff2");
+    src: url('../fonts/SourceSans3VF-Roman.otf.woff') format("woff"),
+    url('../fonts/SourceSans3VF-Roman.otf.woff2') format("woff2");
 }
 
 @font-face {
     font-family: source_serif;
-    src: url('fonts/SourceSerif4Variable-Roman.otf.woff') format("woff"),
-    url('fonts/SourceSerif4Variable-Roman.otf.woff2') format("woff2");
+    src: url('../fonts/SourceSerif4Variable-Roman.otf.woff') format("woff"),
+    url('../fonts/SourceSerif4Variable-Roman.otf.woff2') format("woff2");
 }
 
 h1 {

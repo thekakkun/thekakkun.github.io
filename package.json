@@ -8,7 +8,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "sass": "sass src/scss:css"
+    "sass": "sass scss:css"
   },
   "repository": {
     "type": "git",

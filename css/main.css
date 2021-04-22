@@ -1,0 +1,54 @@
+@font-face {
+  font-family: "Source Sans";
+  src: url("../fonts/SourceSans3-Regular.otf.woff") format("woff"), url("../fonts/SourceSans3-Regular.otf.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Source Sans";
+  src: url("../fonts/SourceSans3-Bold.otf.woff") format("woff"), url("../fonts/SourceSans3-Bold.otf.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Source Sans";
+  src: url("../fonts/SourceSans3-It.otf.woff") format("woff"), url("../fonts/SourceSans3-It.otf.woff2") format("woff2");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Source Sans";
+  src: url("../fonts/SourceSans3-BoldIt.otf.woff") format("woff"), url("../fonts/SourceSans3-BoldIt.otf.woff2") format("woff2");
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Source Serif";
+  src: url("../fonts/SourceSerif4-Regular.otf.woff") format("woff"), url("../fonts//SourceSerif4-Regular.otf.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Source Serif";
+  src: url("../fonts/SourceSerif4-Bold.otf.woff") format("woff"), url("../fonts//SourceSerif4-Bold.otf.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Source Serif";
+  src: url("../fonts/SourceSerif4-It.otf.woff") format("woff"), url("../fonts//SourceSerif4-It.otf.woff2") format("woff2");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Source Serif";
+  src: url("../fonts/SourceSerif4-BoldIt.otf.woff") format("woff"), url("../fonts//SourceSerif4-BoldIt.otf.woff2") format("woff2");
+  font-weight: bold;
+  font-style: italic;
+}
+h1 {
+  font-family: "Source Sans", Arial;
+  color: red;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3Njc3MvX2ZvbnRzLnNjc3MiLCJtYWluLmNzcyIsIi4uL3Njc3MvbWFpbi5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsMEJBQUE7RUFDQSwrSEFBQTtFQUVBLG1CQUFBO0VBQ0Esa0JBQUE7QUNBRjtBREdBO0VBQ0UsMEJBQUE7RUFDQSx5SEFBQTtFQUVBLGlCQUFBO0VBQ0Esa0JBQUE7QUNGRjtBREtBO0VBQ0UsMEJBQUE7RUFDQSxxSEFBQTtFQUVBLG1CQUFBO0VBQ0Esa0JBQUE7QUNKRjtBRE9BO0VBQ0UsMEJBQUE7RUFDQSw2SEFBQTtFQUVBLGlCQUFBO0VBQ0Esa0JBQUE7QUNORjtBRFNBO0VBQ0UsMkJBQUE7RUFDQSxrSUFBQTtFQUVBLG1CQUFBO0VBQ0Esa0JBQUE7QUNSRjtBRFdBO0VBQ0UsMkJBQUE7RUFDQSw0SEFBQTtFQUVBLGlCQUFBO0VBQ0Esa0JBQUE7QUNWRjtBRGFBO0VBQ0UsMkJBQUE7RUFDQSx3SEFBQTtFQUVBLG1CQUFBO0VBQ0Esa0JBQUE7QUNaRjtBRGVBO0VBQ0UsMkJBQUE7RUFDQSxnSUFBQTtFQUVBLGlCQUFBO0VBQ0Esa0JBQUE7QUNkRjtBQzdDQTtFQUNFLGlDQUFBO0VBQ0EsVUFBQTtBRCtDRiIsImZpbGUiOiJtYWluLmNzcyJ9 */

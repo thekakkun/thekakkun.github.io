@@ -1,5 +1,13 @@
 @use 'fonts.scss';
+@use 'normalize.css';
+
+$red: #c9211e;
 
 * {
   font-family: "Source Sans", sans-serif;
+}
+
+h2 {
+  font-family: "Source Serif", serif;
+  color: $red;
 }

@@ -21,7 +21,7 @@
     "build:css": "npm run sass && npm run autoprefixer",
     "watch:css": "watch \"npm run build:css\" scss",
     "watch": "npm-run-all watch:*",
-    "start": "browser-sync start -s -f '*.html' 'css'"
+    "start": "browser-sync start -s -f '**/*.html' 'css'"
   },
   "repository": {
     "type": "git",

@@ -5,9 +5,67 @@ $red: #c9211e;
 
 * {
   font-family: "Source Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-h2 {
-  font-family: "Source Serif", serif;
-  color: $red;
+header {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  h1 {
+    float: left;
+    color: $red;
+    font-weight: 100;
+  }
+  nav {
+    float: right;
+    ul {
+      display: inline-flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      li {
+        list-style: none;
+        margin: 0 15px;
+        font-size: larger;
+
+        .has_subnav {
+          &:hover > .sub_nav {
+            display: block;
+          }
+        }
+        img {
+          height: 20px;
+        }
+        a {
+          text-decoration: none;
+          color: black;
+          &:hover {
+            color: $red;
+          }
+          .current {
+            color: $red;
+          }
+        }
+      }
+    }
+    .sub_nav {
+      display: none;
+    }
+  }
+}
+
+body {
+  main {
+    max-width: 1024px;
+    margin: 0 auto;
+  }
 }

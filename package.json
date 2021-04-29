@@ -17,9 +17,10 @@
     "sass": "sass scss:css",
     "autoprefixer": "postcss -u autoprefixer -r css/*.css",
     "build:css": "npm run sass && npm run autoprefixer",
+    "postbuild:css": "browser-sync reload",
     "watch:css": "watch \"npm run build:css\" scss",
     "watch": "npm-run-all watch:*",
-    "start": "browser-sync start -s -f '**/*.html' 'css'"
+    "start": "browser-sync start -s -f '**/*.html'"
   },
   "repository": {
     "type": "git",

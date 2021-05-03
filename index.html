@@ -1,102 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hiroto Kaku: UX Researcher</title>
-    <link rel="stylesheet" href="css/main.css" />
-  </head>
 
-  <body>
-    <header>
-      <h1>Hiroto Kaku</h1>
-      <nav>
-        <ul>
-          <li><a href="about.html">About Me</a></li>
-          <li class="has_subnav">
-            <a href="#">Case Studies</a>
-            <ul class="sub_nav">
-              <li>
-                <a href="case-studies/job-seekers.html">Job Seekers Study</a>
-              </li>
-              <li>
-                <a href="case-studies/utilities.html">
-                  Utilities Expert Review
-                </a>
-              </li>
-              <li>
-                <a href="case-studies/beverage.html">
-                  Beverage Website Evaluation
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li><a href="">Resume</a></li>
-          <li>
-            <a href="https://www.linkedin.com/in/hirotokaku/"
-              ><img src="img/linkedin_black.png" alt="LinkedIn"
-            /></a>
-          </li>
-          <li>
-            <a href="mailto:kaku.hiroto@gmail.com"
-              ><img src="img/email.png" alt="Email"
-            /></a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hiroto Kaku: UX Researcher</title>
+  <link rel="stylesheet" href="css/main.css" />
+</head>
 
-    <main>
-      <h2>About Me</h2>
-      <p>Hi, I'm Hiroto!</p>
-      <p>
-        I'm a <em>UX Researcher with 5 years of experience</em> working at an
+<body>
+  <header class="header">
+    <h1 class="header__name">Hiroto Kaku</h1>
+    <nav>
+      <ul class="header__nav main_nav">
+        <li class="main_nav__link"><a href="about.html">About Me</a></li>
+        <li class="main_nav__link">
+          <a href="#">Case Studies</a>
+          <ul class="main_nav__subnav">
+            <li>
+              <a href="case-studies/job-seekers.html">Job Seekers Study</a>
+            </li>
+            <li>
+              <a href="case-studies/utilities.html">
+                Utilities Expert Review
+              </a>
+            </li>
+            <li>
+              <a href="case-studies/beverage.html">
+                Beverage Website Evaluation
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="main_nav__link"><a href="">Resume</a></li>
+        <li class="main_nav__link">
+          <a href="https://www.linkedin.com/in/hirotokaku/"><img src="img/linkedin_black.png"
+              onmouseover="this.src='img/linkedin_red.png'" onmouseout="this.src='img/linkedin_black.png'"
+              alt="LinkedIn" /></a>
+        </li>
+        <li class="main_nav__link">
+          <a href="mailto:kaku.hiroto@gmail.com"><img src="img/email.png" onmouseover="this.src='img/email_red.png'"
+              onmouseout="this.src='img/email.png'" alt="Email" /></a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="content">
+    <div class="about_me">
+      <h2 class="about_me__head">Hi, I'm Hiroto!</h2>
+      <p class="about_me__content">
+        I'm a <em class="about_me__content--bold">UX Researcher with 5 years of experience</em> working at an
         agency in Tokyo, which has given me the opportunity to work with a wide
         range of clients from around the world. I'm now
-        <em
-          >looking for an in-house UX Researcher position that will allow me to
-          focus on improving a narrow set of products over the long-term</em
-        >.
+        <em class="about_me__content--bold">looking for an in-house UX Researcher position that will allow me to
+          focus on improving a narrow set of products over the long-term</em>.
       </p>
+    </div>
 
-      <h2>Case Studies</h2>
-      <ul>
-        <li>
-          <a href="case-studies/job-seekers.html">
-            <h3>Job Seekers Study</h3>
-            <p>Desk research / user interviews / survey</p>
-          </a>
-        </li>
-        <li>
-          <a href="case-studies/utilities.html">
-            <h3>Utilities Expert Review</h3>
-            <p>Expert review</p>
-          </a>
-        </li>
-        <li>
-          <a href="case-studies/beverage.html">
-            <h3>Beverage Website Evaluation</h3>
-            <p>Summative study and usability testing</p></a
-          >
-        </li>
-      </ul>
+    <h2>Case Studies</h2>
+    <ul>
+      <li>
+        <a href="case-studies/job-seekers.html">
+          <h3>Job Seekers Study</h3>
+          <p>Desk research / user interviews / survey</p>
+        </a>
+      </li>
+      <li>
+        <a href="case-studies/utilities.html">
+          <h3>Utilities Expert Review</h3>
+          <p>Expert review</p>
+        </a>
+      </li>
+      <li>
+        <a href="case-studies/beverage.html">
+          <h3>Beverage Website Evaluation</h3>
+          <p>Summative study and usability testing</p>
+        </a>
+      </li>
+    </ul>
 
-      <h2>Connect with me!</h2>
-      <ul>
-        <li>
-          <a href="https://www.linkedin.com/in/hirotokaku/"
-            ><img src="img/linkedin.png" alt="LinkedIn"
-          /></a>
-        </li>
-        <li>
-          <a href="mailto:kaku.hiroto@gmail.com"
-            ><img src="img/email.png" alt="Email"
-          /></a>
-        </li>
-      </ul>
-    </main>
+    <h2>Connect with me!</h2>
+    <ul>
+      <li>
+        <a href="https://www.linkedin.com/in/hirotokaku/"><img src="img/linkedin.png" alt="LinkedIn" /></a>
+      </li>
+      <li>
+        <a href="mailto:kaku.hiroto@gmail.com"><img src="img/email.png" alt="Email" /></a>
+      </li>
+    </ul>
+  </main>
 
-    <footer></footer>
-  </body>
+  <footer></footer>
+</body>
+
 </html>

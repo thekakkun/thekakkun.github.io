@@ -10,7 +10,11 @@ $red: #c9211e;
   box-sizing: border-box;
 }
 
-header {
+html {
+  font-size: 100%;
+}
+
+.header {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -20,52 +24,72 @@ header {
   justify-content: space-between;
   align-items: center;
   text-transform: uppercase;
-  h1 {
-    float: left;
+
+  &__name {
     color: $red;
+    font-size: 2rem;
     font-weight: 100;
   }
-  nav {
-    float: right;
-    ul {
-      display: inline-flex;
-      flex-direction: row;
-      justify-content: space-between;
 
-      li {
-        list-style: none;
-        margin: 0 15px;
-        font-size: larger;
+  &__nav {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
 
-        .has_subnav {
-          &:hover > .sub_nav {
-            display: block;
-          }
-        }
-        img {
-          height: 20px;
-        }
-        a {
-          text-decoration: none;
-          color: black;
-          &:hover {
-            color: $red;
-          }
-          .current {
-            color: $red;
-          }
-        }
+.main_nav {
+  &__link {
+    list-style: none;
+    margin: 0 15px;
+    font-size: 1.2rem;
+    img {
+      height: 20px;
+    }
+    a {
+      text-decoration: none;
+      color: black;
+      &:hover {
+        color: $red;
+      }
+      .current {
+        color: $red;
       }
     }
-    .sub_nav {
-      display: none;
+  }
+  &__link:hover > &__subnav {
+    display: block;
+    position: absolute;
+    z-index: 1;
+  }
+  &__subnav {
+    display: none;
+    list-style: none;
+    background-color: #fff;
+    a {
+      font-size: 0.9rem;
+      margin: 15px 0;
+      display: block;
     }
   }
 }
 
-body {
-  main {
-    max-width: 1024px;
-    margin: 0 auto;
+.content {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.about_me {
+  background-color: lightgray;
+  padding: 100px 0;
+  &__head {
+    font-family: "Source Serif", serif;
+  }
+  &__content {
+    font-size: 1.2rem;
+    &--bold {
+      font-style: normal;
+      font-weight: 600;
+    }
   }
 }

@@ -10,14 +10,15 @@
 </head>
 
 <body>
-  <header>
-    <h1><a href="../">Hiroto Kaku</a></h1>
+  <header class="header">
+    <h1><a class="header__logo" href="/">Hiroto Kaku</a>
+      </h1>
     <nav>
-      <ul>
-        <li><a href="about.html">About Me</a></li>
-        <li>
-          <a href="">Case Studies</a>
-          <ul>
+      <ul class="header__nav main-nav">
+        <li class="main-nav__link"><a href="about.html">About Me</a></li>
+        <li class="main-nav__link">
+          <a href="#">Case Studies</a>
+          <ul class="main-nav__subnav">
             <li>
               <a href="case-studies/job-seekers.html">Job Seekers Study</a>
             </li>
@@ -33,10 +34,20 @@
             </li>
           </ul>
         </li>
-        <li><a href="">Resume</a></li>
+        <li class="main-nav__link"><a href="">Resume</a></li>
+        <li class="main-nav__link">
+          <a href="https://www.linkedin.com/in/hirotokaku/"><img src="img/linkedin_black.png"
+              onmouseover="this.src='img/linkedin_red.png'" onmouseout="this.src='img/linkedin_black.png'"
+              alt="LinkedIn" /></a>
+        </li>
+        <li class="main-nav__link">
+          <a href="mailto:kaku.hiroto@gmail.com"><img src="img/email.png" onmouseover="this.src='img/email_red.png'"
+              onmouseout="this.src='img/email.png'" alt="Email" /></a>
+        </li>
       </ul>
     </nav>
   </header>
+
   <main>
     <h1>Job Seekers Study</h1>
     <p>April—June 2019</p>

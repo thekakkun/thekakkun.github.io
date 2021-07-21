@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serve": "browser-sync start -s -f '*.html'"
+    "serve": "browser-sync start -s -f '*/*.html'"
   },
   "author": "",
   "license": "ISC",

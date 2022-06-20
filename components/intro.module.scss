@@ -1,0 +1,27 @@
+@import "../styles/global.scss";
+
+.intro {
+  margin-top: 50px;
+
+  &__title {
+    @include serif;
+    font-size: 3.6rem;
+    margin-bottom: 30px;
+    line-height: 1.12;
+  }
+
+  &__blurb {
+    font-size: 1.8rem;
+    line-height: 1.2;
+    max-width: 850px;
+    margin-bottom: 10px;
+  }
+
+  &--underline {
+    text-decoration: $green-400 solid underline 0.2rem;
+  }
+
+  &--bold {
+    font-weight: 600;
+  }
+}

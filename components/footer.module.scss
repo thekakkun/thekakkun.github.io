@@ -1,0 +1,19 @@
+@import "../styles/global.scss";
+
+.footer {
+  margin-top: auto;
+  background-color: $blue-800;
+  padding: 15px 0;
+
+  color: #fff;
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  &__textlink {
+    color: #fff;
+  }
+}

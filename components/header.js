@@ -21,7 +21,7 @@ export default function Header({}) {
             </Link>
             <ul className={styles.nav__links}>
               <li>
-                <Link href="/about_me">
+                <Link href="/about-me">
                   <a className={styles.nav__item}>About Me</a>
                 </Link>
               </li>

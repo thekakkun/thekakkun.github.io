@@ -19,13 +19,13 @@ export default function Header({}) {
                 <h1>Hiroto Kaku</h1>
               </a>
             </Link>
-            {/* <ul className={styles.nav__links}>
+            <ul className={styles.nav__links}>
               <li>
                 <Link href="/about_me">
                   <a className={styles.nav__item}>About Me</a>
                 </Link>
               </li>
-            </ul> */}
+            </ul>
           </nav>
           <nav>
             <ul className={styles.socials}>

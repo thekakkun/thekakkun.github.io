@@ -33,7 +33,7 @@ export default function Header({}) {
                 <a href="https://github.com/thekakkun/">
                   <Image
                     loader={imageLoader}
-                    src="logo-github.png"
+                    src="icon-github.svg"
                     alt="GitHub logo"
                     width={logo_size}
                     height={logo_size}
@@ -44,8 +44,19 @@ export default function Header({}) {
                 <a href="https://www.linkedin.com/in/hirotokaku/">
                   <Image
                     loader={imageLoader}
-                    src="logo-linkedin.png"
+                    src="icon-linkedin.svg"
                     alt="LinkedIn logo"
+                    width={logo_size}
+                    height={logo_size}
+                  />
+                </a>
+              </li>
+              <li className={styles.socials__item}>
+                <a href="mailto:kaku.hiroto@gmail.com">
+                  <Image
+                    loader={imageLoader}
+                    src="icon-email.svg"
+                    alt="Email me"
                     width={logo_size}
                     height={logo_size}
                   />

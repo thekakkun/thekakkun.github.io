@@ -1,17 +1,42 @@
 import Head from "next/head";
 
 import styles from "../styles/about-me.module.scss";
+import { Button } from "../components/ui-parts";
 
-export default function aboutMe() {
+let AboutH2 = ({ title }) => {
+  return <h2 className={styles["about-me__h2"]}>{title}</h2>;
+};
+
+export default function AboutMe() {
   return (
     <div>
       <Head>
         <title>Hiroto Kaku - About Me</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      
-      <h1>Hi, I&apos;m Hiroto!</h1>
-      <p>Dummy about me</p>
+
+      <div className={styles["about-me"]}>
+        <h1 className={styles["about-me__h1"]}>About Me</h1>
+        <p className={styles["about-me__description"]}>
+          Hi, I&apos;m Hiroto Kaku!
+        </p>
+        <p className={styles["about-me__description"]}>
+          I&apos;ve had a life-long interested in making things, which led me to
+          study engineering in college.
+        </p>
+        <p className={styles["about-me__description"]}>
+          As a UX research consultant, I worked with both domestic and
+          international clients from a wide range of industries, helping them
+          improve their products for the Japanese market.
+        </p>
+
+        <Button
+          text="Get my resume"
+          href="https://1drv.ms/b/s!ArWlmhrt2oGHoPYm8rqagHabuS_4RA?e=1K1yhx"
+          color="blue"
+          newWindow
+        />
+      </div>
     </div>
   );
 }

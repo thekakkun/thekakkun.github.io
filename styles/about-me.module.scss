@@ -1,0 +1,28 @@
+@import "../styles/global.scss";
+
+.about-me {
+  margin-top: 50px;
+
+  &__h1 {
+    @include serif;
+    font-size: 1.8rem;
+    text-decoration: $green-400 solid underline 0.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  &__h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  &__description {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+
+    &:last-of-type {
+      margin-bottom: 20px;
+    }
+  }
+}

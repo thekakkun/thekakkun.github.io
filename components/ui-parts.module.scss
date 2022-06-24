@@ -1,0 +1,30 @@
+@import "../styles/global.scss";
+
+.button {
+  padding: 12px 17px;
+  color: #fff;
+  text-decoration: none;
+  display: table;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  transition: background-color .5s;
+  font-weight: 550;
+
+  &--blue {
+    @extend .button;
+    background-color: $blue-700;
+
+    &:hover {
+        background-color: $blue-800;
+    }
+  }
+
+  &--green {
+    @extend .button;
+    background-color: $green-600;
+
+    &:hover {
+        background-color: $green-700;
+    }
+  }
+}

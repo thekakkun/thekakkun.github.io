@@ -1,11 +1,14 @@
 import Head from "next/head";
 
 import styles from "../styles/about-me.module.scss";
-import { Button } from "../components/ui-parts";
+import { Button, List } from "../components/ui-parts";
 
-let AboutH2 = ({ title }) => {
-  return <h2 className={styles["about-me__h2"]}>{title}</h2>;
-};
+const interests = [
+  "Music (into drum & bass)",
+  "Food (both eating and cooking)",
+  "Reading (70% through with Malazan Book of the Fallen)",
+  "Games (PC and Switch)",
+];
 
 export default function AboutMe() {
   return (
@@ -16,7 +19,8 @@ export default function AboutMe() {
       </Head>
 
       <div className={styles["about-me"]}>
-        <h1 className={styles["about-me__h1"]}>About Me</h1>
+        <h1 className={styles["about-me__h1"]}>About me</h1>
+        <h2 className={styles["about-me__h2"]}>Skills &amp; Expertise</h2>
         <p className={styles["about-me__description"]}>
           Hi, I&apos;m Hiroto Kaku!
         </p>
@@ -30,13 +34,22 @@ export default function AboutMe() {
           improve their products for the Japanese market.
         </p>
 
-        <Button
-          text="Get my resume"
-          href="https://1drv.ms/b/s!ArWlmhrt2oGHoPYm8rqagHabuS_4RA?e=1K1yhx"
-          color="blue"
-          newWindow
-        />
+        <h2 className={styles["about-me__h2"]}>My interests</h2>
+        <p className={styles["about-me__description"]}>
+          Day to day, I&apos;m always looking for new things to discover and
+          learn about. My hobbies always give me a wide range of things to dig
+          into and enjoy.
+        </p>
+        <List items={interests}></List>
       </div>
+
+      <h2 className={styles["about-me__h2"]}>Learn more and get in touch</h2>
+      <Button
+        text="Get my resume"
+        href="https://1drv.ms/b/s!ArWlmhrt2oGHoPYm8rqagHabuS_4RA?e=1K1yhx"
+        color="blue"
+        newWindow
+      />
     </div>
   );
 }

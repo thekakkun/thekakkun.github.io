@@ -63,11 +63,6 @@ $neutral-900: #1d2021;
   font-family: "Source Sans", sans-serif;
 }
 
-@mixin wrapper {
-  margin: 0 auto;
-  max-width: 1200px;
-}
-
 @mixin serif {
   font-family: "Source Serif", Times, "Times New Roman", Georgia, serif;
 }

@@ -27,9 +27,8 @@
     max-width: 850px;
   }
 
-  &__links {
-    & li {
-      display: inline;
-    }
-  }
+    // &:last-of-type {
+    //   margin-bottom: 20px;
+    // }
+  // }
 }

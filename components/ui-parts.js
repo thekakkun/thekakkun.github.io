@@ -14,14 +14,11 @@ export function Button({ text, href, color, newWindow }) {
     </a>
   );
 }
-
 export function List({ items }) {
   return (
     <ul className={styles.list}>
       {items.map((item, i) => (
-        <li className={styles.list__item} key={i}>
-          {item}
-        </li>
+        <li className={styles.list__item} key={i}>{item}</li>
       ))}
     </ul>
   );

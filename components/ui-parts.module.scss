@@ -4,7 +4,6 @@
   padding: 12px 17px;
   color: #fff;
   text-decoration: none;
-  display: table;
   font-size: 1.1rem;
   text-transform: uppercase;
   transition: background-color .5s;
@@ -26,5 +25,15 @@
     &:hover {
         background-color: $green-700;
     }
+  }
+}
+
+.list {
+  margin-bottom: 10px;
+
+  &__item {
+    list-style: disc inside;
+    font-size: 1.2rem;
+    line-height: 1.2;
   }
 }

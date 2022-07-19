@@ -53,7 +53,7 @@ export default function AboutMe() {
         <List items={interests}></List>
       </section>
 
-      <section className={styles["about-me__section"]}>
+      {/* <section className={styles["about-me__section"]}>
         <h2 className={styles["about-me__h2"]}>Learn more and get in touch</h2>
         <ul className={styles["about-me__links"]}>
           <li>
@@ -99,7 +99,7 @@ export default function AboutMe() {
             </a>
           </li>
         </ul>
-      </section>
+      </section> */}
     </article>
   );
 }

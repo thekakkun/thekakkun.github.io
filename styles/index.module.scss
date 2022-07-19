@@ -1,10 +1,10 @@
-@import "../styles/global.scss";
+@use 'base';
 
 .intro {
   margin-top: 50px;
 
   &__title {
-    @include serif;
+    @include base.serif;
     font-size: 3.6rem;
     margin-bottom: 30px;
     line-height: 1.12;
@@ -18,7 +18,7 @@
   }
 
   &--underline {
-    text-decoration: $green-400 solid underline 0.2rem;
+    text-decoration: base.$green-400 solid underline 0.2rem;
   }
 
   &--bold {

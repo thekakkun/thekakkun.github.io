@@ -1,12 +1,12 @@
-@import "../styles/global.scss";
+@use "base";
 
 .about-me {
   margin-top: 50px;
 
   &__h1 {
-    @include serif;
+    @include base.serif;
     font-size: 1.8rem;
-    text-decoration: $green-400 solid underline 0.2rem;
+    text-decoration: base.$green-400 solid underline 0.2rem;
     font-weight: 600;
     margin-bottom: 10px;
   }
@@ -27,8 +27,4 @@
     max-width: 850px;
   }
 
-    // &:last-of-type {
-    //   margin-bottom: 20px;
-    // }
-  // }
 }

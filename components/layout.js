@@ -1,5 +1,5 @@
 import Footer from "./footer";
-import Container from "./container";
+import Container from "./UI/container";
 import Header from "./header";
 
 export default function Layout({ children }) {

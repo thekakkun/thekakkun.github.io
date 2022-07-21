@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark, faEnvelope } from "@fortawesome/free-solid-svg-icons";
@@ -14,16 +15,32 @@ export default function Header({ menu, setMenu }) {
   const closeMenu = () => setMenu(false);
   const toggleMenu = () => setMenu(!menu);
   const navStyle = {
-    closed: `${styles.nav}`,
+    closed: styles.nav,
     open: `${styles.nav} ${styles["nav--open"]}`,
   };
   const menuStyle = {
-    closed: `${styles.menu}`,
+    closed: styles.menu,
     open: `${styles.menu} ${styles["menu--open"]}`,
   };
 
   const node = useRef();
   useOnClickOutside(node, () => setMenu(false));
+
+  function MenuItem({ route, text }) {
+    const currentRoute = useRouter().pathname;
+    const itemClass =
+      route === currentRoute
+        ? `${styles.menu__item} ${styles["menu__item--current"]}`
+        : styles.menu__item;
+
+    return (
+      <li className={itemClass}>
+        <Link href={route}>
+          <a onClick={closeMenu}>{text}</a>
+        </Link>
+      </li>
+    );
+  }
 
   return (
     <header className={styles.header}>
@@ -41,17 +58,10 @@ export default function Header({ menu, setMenu }) {
           </div>
 
           <ul className={menu ? menuStyle.open : menuStyle.closed}>
-            <li className={styles.menu__item}>
-              <Link href="/about-me">
-                <a onClick={closeMenu}>About Me</a>
-              </Link>
-            </li>
+            <hr className={styles.menu__item}></hr>
 
-            {/* <li className={styles.menu__item}>
-              <Link href="/blog">
-                <a onClick={closeMenu} >Blog</a>
-              </Link>
-            </li> */}
+            <MenuItem route="/about-me" text="About Me"></MenuItem>
+            <MenuItem route="/blog" text="Blog"></MenuItem>
 
             <hr className={styles.menu__item}></hr>
 

@@ -1,8 +1,6 @@
 @use "base";
 
 .about-me {
-  margin-top: 50px;
-
   &__h1 {
     @include base.serif;
     font-size: 1.8rem;
@@ -18,7 +16,7 @@
   }
 
   &__section {
-    margin-bottom: 20px;;
+    margin-bottom: 20px;
   }
 
   &__description {
@@ -26,5 +24,4 @@
     margin-bottom: 10px;
     max-width: 850px;
   }
-
 }

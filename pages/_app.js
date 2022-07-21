@@ -8,6 +8,9 @@ import "../styles/reset.css";
 import "../styles/global.scss";
 
 export default function MyApp({ Component, pageProps }) {
+  console.log(
+    "Hi there 👋, you can see my source code at https://github.com/thekakkun/thekakkun.github.io"
+  );
   return (
     <Layout>
       <Component {...pageProps} />

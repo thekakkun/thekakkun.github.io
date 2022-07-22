@@ -1,4 +1,4 @@
-@use "../styles/base";
+@use "../../styles/base";
 
 .button {
   padding: 12px 17px;
@@ -6,8 +6,10 @@
   text-decoration: none;
   font-size: 1.1rem;
   text-transform: uppercase;
-  transition: background-color 0.5s;
+  transition: background-color 0.3s ease-in-out;
   font-weight: 550;
+  display: inline-block;
+  border-radius: 7px;
 
   &--blue {
     @extend .button;
@@ -25,15 +27,5 @@
     &:hover {
       background-color: base.$green-700;
     }
-  }
-}
-
-.list {
-  margin-bottom: 10px;
-  
-  &__item {
-    list-style: disc inside;
-    font-size: 1.2rem;
-    line-height: 1.2;
   }
 }

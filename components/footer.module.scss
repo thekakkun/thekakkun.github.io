@@ -1,7 +1,7 @@
-@use '../styles/base';
+@use "../styles/base";
 
 .footer {
-  margin-top: auto;
+  flex-shrink: 0;
   background-color: base.$blue-800;
   padding: 15px 0;
 
@@ -12,7 +12,7 @@
     flex-direction: row;
     justify-content: space-between;
   }
-  
+
   &__textlink {
     color: #fff;
   }

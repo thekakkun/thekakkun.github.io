@@ -61,7 +61,7 @@ export default function Header({ menu, setMenu }) {
             <hr className={styles.menu__item}></hr>
 
             <MenuItem route="/about-me" text="About Me"></MenuItem>
-            <MenuItem route="/blog" text="Blog"></MenuItem>
+            {/* <MenuItem route="/blog" text="Blog"></MenuItem> */}
 
             <hr className={styles.menu__item}></hr>
 

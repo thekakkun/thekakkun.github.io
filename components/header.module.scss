@@ -20,6 +20,11 @@
   &--open {
     box-shadow: 5px 5px 20px base.$green-200;
   }
+
+  @include base.phone {
+    width: 100vw;
+    box-sizing: border-box;
+  }
 }
 
 .main {
@@ -72,10 +77,13 @@
 
   &__item {
     margin: 10px 0;
+    display: inline-block;
+    text-align: center;
 
-    &:hover, &--current {
-      text-decoration: base.$green-300 solid underline .2rem;
-      text-underline-offset: .3rem;
+    &:hover,
+    &--current {
+      text-decoration: base.$green-300 solid underline 0.2rem;
+      text-underline-offset: 0.3rem;
     }
 
     & a {
@@ -86,7 +94,7 @@
     }
 
     @at-root hr#{&} {
-      color: base.$green-300;
+      color: base.$green-100;
       width: 30%;
     }
   }

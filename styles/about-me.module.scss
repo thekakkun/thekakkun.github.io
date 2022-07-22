@@ -25,3 +25,27 @@
     max-width: 850px;
   }
 }
+
+.links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  & li {
+    margin-right: 15px;
+  }
+
+  &__icon {
+    font-size: 2rem;
+    
+    & a {
+      transition: color 0.3s ease-in-out;
+      color: base.$blue-700;
+      text-decoration: none;
+
+      &:hover {
+        color: base.$blue-800;
+      }
+    }
+  }
+}

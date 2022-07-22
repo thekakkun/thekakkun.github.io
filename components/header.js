@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
-import Container from "./UI/container";
+import Container from "./ui/container";
 import { useOnClickOutside } from "../hooks";
 
 import styles from "./header.module.scss";

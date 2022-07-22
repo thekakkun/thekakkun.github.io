@@ -1,0 +1,11 @@
+@use "../../styles/base";
+
+.list {
+  margin-bottom: 10px;
+
+  &__item {
+    list-style: disc inside;
+    font-size: 1.2rem;
+    line-height: 1.2;
+  }
+}

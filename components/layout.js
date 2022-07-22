@@ -1,11 +1,16 @@
+import { useState } from "react";
+
 import Footer from "./footer";
-import Container from "./container";
+import Container from "./UI/container";
 import Header from "./header";
 
+
 export default function Layout({ children }) {
+  const [menu, setMenu] = useState(false);
+
   return (
     <div className="body">
-      <Header />
+      <Header menu={menu} setMenu={setMenu} />
 
       <main>
         <Container>{children} </Container>

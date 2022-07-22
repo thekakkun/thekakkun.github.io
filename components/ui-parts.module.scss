@@ -1,4 +1,4 @@
-@import "../styles/global.scss";
+@use "../styles/base";
 
 .button {
   padding: 12px 17px;
@@ -11,19 +11,19 @@
 
   &--blue {
     @extend .button;
-    background-color: $blue-700;
+    background-color: base.$blue-700;
 
     &:hover {
-      background-color: $blue-800;
+      background-color: base.$blue-800;
     }
   }
 
   &--green {
     @extend .button;
-    background-color: $green-600;
+    background-color: base.$green-600;
 
     &:hover {
-      background-color: $green-700;
+      background-color: base.$green-700;
     }
   }
 }

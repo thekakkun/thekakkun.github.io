@@ -66,6 +66,10 @@ $neutral-900: #1d2021;
     arial, sans-serif;
 }
 
+.body {
+  @include sans;
+}
+
 // Responsive breakpoints
 @mixin phone {
   @media (max-width: 576px) {

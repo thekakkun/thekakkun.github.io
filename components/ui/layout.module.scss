@@ -12,3 +12,19 @@
 .main {
   flex: 1 0 auto;
 }
+
+.backToHome {
+  margin-bottom: 30px;
+
+  & a {
+    color: base.$blue-700;
+    transition: color 0.2s ease-in-out;
+    text-decoration: none;
+    font-size: 1.5rem;
+
+    &:hover {
+      color: base.$blue-800;
+      text-decoration: solid underline;
+    }
+  }
+}

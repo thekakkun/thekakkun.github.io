@@ -14,11 +14,13 @@
   margin-top: -1rem;
   margin-left: -1rem;
   border-radius: 10px;
-  background-color: #fff;
-  transition: box-shadow 0.2s ease-in-out;
+  background-color: rgba(255, 255, 255, 0);
+
+  transition: box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
 
   &--open {
     box-shadow: 5px 5px 20px base.$green-200;
+    background-color: rgb(255, 255, 255);
   }
 
   @include base.phone {

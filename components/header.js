@@ -11,7 +11,7 @@ import { useOnClickOutside } from "../hooks";
 
 import styles from "./header.module.scss";
 
-export default function Header({ menu, setMenu }) {
+export default function Header({ menu, setMenu, currentRoute }) {
   const closeMenu = () => setMenu(false);
   const toggleMenu = () => setMenu(!menu);
   const navStyle = {
@@ -22,12 +22,19 @@ export default function Header({ menu, setMenu }) {
     closed: styles.menu,
     open: `${styles.menu} ${styles["menu--open"]}`,
   };
+  const homeStyle =
+    currentRoute === "/"
+      ? `${styles.main__home} ${styles["main__home--home"]}`
+      : styles.main__home;
+  const buttonStyle =
+    currentRoute === "/"
+      ? `${styles.main__button} ${styles["main__button--home"]}`
+      : styles.main__button;
 
   const node = useRef();
   useOnClickOutside(node, () => setMenu(false));
 
   function MenuItem({ route, text }) {
-    const currentRoute = useRouter().pathname;
     const itemClass =
       route === currentRoute
         ? `${styles.menu__item} ${styles["menu__item--current"]}`
@@ -48,11 +55,11 @@ export default function Header({ menu, setMenu }) {
         <nav ref={node} className={menu ? navStyle.open : navStyle.closed}>
           <div className={styles.main}>
             <Link href="/">
-              <a onClick={closeMenu} className={styles.main__home}>
+              <a onClick={closeMenu} className={homeStyle}>
                 <h1>Hiroto Kaku</h1>
               </a>
             </Link>
-            <button className={styles.main__button} onClick={toggleMenu}>
+            <button className={buttonStyle} onClick={toggleMenu}>
               <FontAwesomeIcon icon={menu ? faXmark : faBars} />
             </button>
           </div>

@@ -38,13 +38,13 @@ export default function HomePage() {
                 </a>
               </Link>
             </li>
-            <li className={styles.nav__item}>
+            {/* <li className={styles.nav__item}>
               <Link href="/blog">
                 <a>
                   <span>Blog</span>→
                 </a>
               </Link>
-            </li>
+            </li> */}
             <li className={styles.nav__item}>
               <ul className={styles.nav__social}>
                 <li>

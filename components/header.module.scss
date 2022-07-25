@@ -37,31 +37,54 @@
   &__button {
     background-color: inherit;
     border: none;
-    width: 2.2rem;
     font-size: 2rem;
     color: base.$blue-800;
     cursor: pointer;
     order: -1;
-    transition: color 0.2s ease-in;
     margin-right: 20px;
+    width: 2.2rem;
 
     &:hover {
       color: base.$blue-700;
+    }
+
+    &--home {
+      color: base.$blue-200;
+      overflow: hidden;
+      margin-right: 0;
+      width: 0;
+      padding: 0;
+
+      &:hover {
+        color: base.$blue-100;
+      }
     }
   }
 
   &__home {
     @include base.serif;
     color: base.$blue-800;
-    transition: color 0.2s ease-in;
     font-size: 2.4rem;
     font-weight: 800;
     font-style: italic;
     letter-spacing: 0.3rem;
     text-decoration: none;
-    
+
     &:hover {
       color: base.$blue-700;
+    }
+
+    &--home {
+      color: base.$green-100;
+      font-size: 3.6rem;
+
+      @include base.phone {
+        font-size: 2.4rem;
+      }
+
+      &:hover {
+        color: base.$green-100;
+      }
     }
   }
 }
@@ -93,7 +116,7 @@
       text-underline-offset: 0.3rem;
     }
 
-    & a {
+    a {
       @include base.sans;
       color: base.$green-800;
       text-decoration: none;
@@ -117,7 +140,7 @@
   &__item {
     margin: 0 10px;
 
-    & a {
+    a {
       text-decoration: none;
       color: base.$green-800;
       font-size: 1.8rem;

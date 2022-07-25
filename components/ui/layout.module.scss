@@ -5,8 +5,12 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  background-color: #fff;
+  background: #fff;
   color: base.$neutral-900;
+
+  &--home {
+    background: url("/images/bg.jpg") center/cover;
+  }
 }
 
 .main {
@@ -16,14 +20,14 @@
 .backToHome {
   margin-bottom: 30px;
 
-  & a {
-    color: base.$blue-700;
+  a {
+    color: base.$green-700;
     transition: color 0.2s ease-in-out;
     text-decoration: none;
     font-size: 1.5rem;
 
     &:hover {
-      color: base.$blue-800;
+      color: base.$green-800;
       text-decoration: solid underline;
     }
   }

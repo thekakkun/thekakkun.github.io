@@ -1,4 +1,9 @@
 import Head from "next/head";
+import Link from "next/link";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 import styles from "../styles/index.module.scss";
 
@@ -17,25 +22,62 @@ export default function HomePage() {
 
       <div className={styles.intro}>
         <h1 className={styles.intro__title}>
-          <em className={styles["intro--bold--underline"]}>Software dev</em>{" "}
-          &amp;{" "}
-          <em className={styles["intro--bold--underline"]}>UX researcher</em>
+          Hi, I&apos;m a<br></br>
+          <em className={styles["intro--bold--underline"]}>
+            Software&nbsp;dev
+          </em>{" "}
+          &amp;&nbsp;
+          <em className={styles["intro--bold--underline"]}>UX&nbsp;researcher</em>
         </h1>
-        <p className={styles.intro__blurb}>
-          5 years&apos; experience working as a consultant at an agency out of
-          Tokyo.
-        </p>
-        <p className={styles.intro__blurb}>
-          <em className={styles["intro--bold"]}>
-            I&apos;m now looking for a{" "}
-            <em className={styles["intro--underline"]}>
-              software developer position
-            </em>{" "}
-            so that I can take a more hands-on role in creating products with
-            great UX
-          </em>
-          .
-        </p>
+        <nav className={styles.nav}>
+          <ul>
+            <li className={styles.nav__item}>
+              <Link href="/about-me">
+                <a>
+                  <span>About me</span>→
+                </a>
+              </Link>
+            </li>
+            <li className={styles.nav__item}>
+              <Link href="/blog">
+                <a>
+                  <span>Blog</span>→
+                </a>
+              </Link>
+            </li>
+            <li className={styles.nav__item}>
+              <ul className={styles.nav__social}>
+                <li>
+                  <a
+                    href="https://github.com/thekakkun/"
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    <FontAwesomeIcon icon={faGithub} />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/hirotokaku/"
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    <FontAwesomeIcon icon={faLinkedin} />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="mailto:kaku.hiroto@gmail.com"
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    <FontAwesomeIcon icon={faEnvelope} />
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
       </div>
     </>
   );

@@ -11,14 +11,8 @@ import Button from "../components/ui/button";
 import Article from "../components/ui/article";
 
 const imageLoader = require("../loader");
-const logo_size = 35;
 
-const interests = [
-  "Music (into drum & bass)",
-  "Food (both eating and cooking)",
-  "Reading (70% through with Malazan Book of the Fallen)",
-  "Games (PC and Switch)",
-];
+const interests = ["Music", "Eating and cooking", "Reading", "Video games"];
 
 export default function AboutMe() {
   return (
@@ -60,13 +54,13 @@ export default function AboutMe() {
               <section className={styles["about-me__section"]}>
                 <h2 className={styles["about-me__h2"]}>Me, as a person</h2>
                 <p className={styles["about-me__description"]}>
-                  Born in Germany and raised in Japan and the US. I&apos;m now
+                  Born in Germany, raised in Tokyo and Los Angeles. I&apos;m now
                   living in Toronto, Canada.
                 </p>
                 <p className={styles["about-me__description"]}>
-                  Day to day, I&apos;m always looking for new things to discover
-                  and learn about. My hobbies always give me a wide range of
-                  things to dig into and enjoy.
+                  I&apos;m a curious person, and I&apos;m always looking for new
+                  things to discover and learn about. My hobbies always give me
+                  a wide range of things to dig into and enjoy.
                 </p>
                 <List items={interests}></List>
               </section>

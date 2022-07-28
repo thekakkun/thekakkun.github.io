@@ -5,10 +5,12 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  background: #fff;
+  background-color: base.$neutral-100;
+  transition: background-color .3s ease-in-out;
   color: base.$neutral-900;
 
   &--home {
+    background-color: base.$green-700;
     background: url("/images/bg.jpg") center/cover;
   }
 }

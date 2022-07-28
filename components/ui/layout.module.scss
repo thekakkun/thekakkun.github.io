@@ -6,12 +6,11 @@
   display: flex;
   flex-direction: column;
   background-color: base.$neutral-100;
-  transition: background-color .3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
   color: base.$neutral-900;
 
   &--home {
-    background-color: base.$green-700;
-    background: url("/images/bg.jpg") center/cover;
+    background: base.$green-700 url("/images/bg.jpg") center/cover;
   }
 }
 

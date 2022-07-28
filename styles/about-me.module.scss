@@ -21,16 +21,18 @@
 
   &__h1 {
     @include base.serif;
-    font-size: 1.8rem;
-    text-decoration: base.$blue-600 solid underline 0.2rem;
+    font-size: 1.6rem;
     font-weight: 600;
-    margin-bottom: 10px;
+    color: base.$blue-900;
+    margin-bottom: 20px;
   }
 
   &__h2 {
     font-size: 1.2rem;
     font-weight: 600;
+    margin-top: 10px;
     margin-bottom: 10px;
+    color: base.$blue-800;
   }
 
   &__section {
@@ -38,8 +40,6 @@
   }
 
   &__description {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
     max-width: 850px;
   }
 }

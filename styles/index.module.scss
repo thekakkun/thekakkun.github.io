@@ -25,12 +25,10 @@
     margin-bottom: 10px;
   }
 
-  &--underline {
-    text-decoration: base.$green-200 solid underline 0.2rem;
-  }
-
-  &--bold {
-    font-weight: 600;
+  em {
+    font-weight: 700;
+    color: base.$green-100;
+    font-style: italic;
   }
 }
 

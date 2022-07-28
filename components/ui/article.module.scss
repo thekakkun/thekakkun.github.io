@@ -1,4 +1,10 @@
 .article {
   max-width: 1000px;
   margin: 0 auto;
+
+  p {
+    line-height: 1.3;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
 }

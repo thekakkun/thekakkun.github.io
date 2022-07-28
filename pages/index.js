@@ -23,11 +23,8 @@ export default function HomePage() {
       <div className={styles.intro}>
         <h1 className={styles.intro__title}>
           Hi, I&apos;m a<br></br>
-          <em className={styles["intro--bold--underline"]}>
-            Software&nbsp;dev
-          </em>{" "}
-          &amp;&nbsp;
-          <em className={styles["intro--bold--underline"]}>UX&nbsp;researcher</em>
+          <em>Software&nbsp;dev</em> &amp;&nbsp;
+          <em>UX&nbsp;researcher</em>
         </h1>
         <nav className={styles.nav}>
           <ul>

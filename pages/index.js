@@ -5,6 +5,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
+import { getSortedPostsData } from "../lib/posts";
+
+export async function getStaticProps() {
+  const allPostsData = await getSortedPostsData();
+  return {
+    props: {
+      allPostsData,
+    },
+  };
+}
+
 import styles from "../styles/index.module.scss";
 
 styles["intro--bold--underline"] = [
@@ -12,7 +23,7 @@ styles["intro--bold--underline"] = [
   styles["intro--bold"],
 ].join(" ");
 
-export default function HomePage() {
+export default function HomePage({ allPostsData }) {
   return (
     <>
       <Head>
@@ -35,13 +46,22 @@ export default function HomePage() {
                 </a>
               </Link>
             </li>
-            {/* <li className={styles.nav__item}>
+            <li className={styles.nav__item}>
               <Link href="/blog">
                 <a>
                   <span>Blog</span>→
                 </a>
               </Link>
-            </li> */}
+              <ul>
+                {allPostsData.map(({ id, date, title }) => (
+                  <li key={id}>
+                    {title} <br />
+                    {id} <br />
+                    {new Date(date).toDateString()}
+                  </li>
+                ))}
+              </ul>
+            </li>
             <li className={styles.nav__item}>
               <ul className={styles.nav__social}>
                 <li>

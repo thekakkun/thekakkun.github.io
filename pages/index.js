@@ -8,7 +8,7 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { getSortedPostsData } from "../lib/posts";
 
 export async function getStaticProps() {
-  const allPostsData = await getSortedPostsData();
+  const allPostsData = JSON.parse(await getSortedPostsData());
   return {
     props: {
       allPostsData,

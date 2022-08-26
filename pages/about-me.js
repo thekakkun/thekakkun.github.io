@@ -33,10 +33,10 @@ export default function AboutMe() {
             ></Image>
           </div>
           <div className={styles["about-me__content"]}>
-            <h1 className={styles["about-me__h1"]}>About me</h1>
+            <h1>About me</h1>
             <div className={styles["about-me__text"]}>
-              <section className={styles["about-me__section"]}>
-                <h2 className={styles["about-me__h2"]}>Skills and expertise</h2>
+              <section>
+                <h2>Skills and expertise</h2>
                 <p className={styles["about-me__description"]}>
                   Hi, I&apos;m Hiroto Kaku!
                 </p>
@@ -51,8 +51,8 @@ export default function AboutMe() {
                 </p>
               </section>
 
-              <section className={styles["about-me__section"]}>
-                <h2 className={styles["about-me__h2"]}>Me, as a person</h2>
+              <section>
+                <h2>Me, as a person</h2>
                 <p className={styles["about-me__description"]}>
                   Born in Germany, raised in Tokyo and Los Angeles. I&apos;m now
                   living in Toronto, Canada.
@@ -65,8 +65,8 @@ export default function AboutMe() {
                 <List items={interests}></List>
               </section>
 
-              <section className={styles["about-me__section"]}>
-                <h2 className={styles["about-me__h2"]}>
+              <section>
+                <h2>
                   Learn more and get in touch
                 </h2>
                 <ul className={styles.links}>

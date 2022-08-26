@@ -19,26 +19,6 @@
     width: 700px;
   }
 
-  &__h1 {
-    @include base.serif;
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: base.$blue-900;
-    margin-bottom: 20px;
-  }
-
-  &__h2 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    color: base.$blue-800;
-  }
-
-  &__section {
-    margin-bottom: 20px;
-  }
-
   &__description {
     max-width: 850px;
   }
@@ -50,6 +30,7 @@
   align-items: center;
 
   & li {
+    list-style: none;
     margin-right: 15px;
   }
 

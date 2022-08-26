@@ -10,14 +10,7 @@ export default function Post({ postData }) {
         <title>Hiroto Kaku - {postData.title}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <Article>
-        {postData.title}
-        <br />
-        {postData.id}
-        <br />
-        {postData.date}
-        <br />
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }}></div>
+      <Article postData={postData}>
       </Article>
     </>
   );

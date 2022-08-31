@@ -1,6 +1,7 @@
-@use "../styles/base";
+@use "../../styles/base";
 
 .header {
+  @include base.container;
   margin-top: 1rem;
   height: 4rem;
 }

@@ -1,5 +1,9 @@
 @use "../../styles/base";
 
+.header {
+  flex: 0 0 auto;
+}
+
 .body {
   height: 100%;
   margin: 0;
@@ -8,20 +12,18 @@
   background-color: base.$neutral-100;
   color: base.$neutral-900;
 
-  &--home {
-    background: base.$green-700 url("/images/bg.jpg") center/cover;
-  }
-
   .main {
     flex: 1 0 auto;
+    background-color: base.$neutral-100;
   }
 
-  .header {
-    flex: 0 0 auto;
-  }
+  &--home {
+    background: base.$green-700 url("/images/bg.jpg") center/cover;
 
-  .footer {
-    flex: 0 0 auto;
+    .main {
+      background: none;
+      position: relative;
+    }
   }
 
   .backToHome {
@@ -39,4 +41,8 @@
       }
     }
   }
+}
+
+.footer {
+  flex: 0 0 auto;
 }

@@ -11,7 +11,12 @@ export default function Layout({ children }) {
   const [menu, setMenu] = useState(false);
 
   return (
-    <div className={styles.body}>
+    <div
+      className={`
+      ${styles.body}
+      ${router.route === "/" && styles["body--home"]}
+    `}
+    >
       <Header menu={menu} setMenu={setMenu} currentRoute={router.route} />
       <main className={styles.main}>{children}</main>
       <Footer className={styles.footer} />

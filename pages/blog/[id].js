@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-import Article from "../../components/ui/article";
+import Article from "../../components/article";
 import { getAllPostIds, getPostData } from "../../lib/posts";
 
 export default function Post({ postData }) {

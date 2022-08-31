@@ -8,7 +8,7 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import styles from "../styles/about-me.module.scss";
 import List from "../components/ui/list";
 import Button from "../components/ui/button";
-import Article from "../components/ui/article";
+import Article from "../components/article";
 
 const imageLoader = require("../loader");
 

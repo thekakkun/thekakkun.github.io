@@ -5,6 +5,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
+import { getSortedPostsData } from "../lib/posts";
+
+export async function getStaticProps() {
+  const allPostsData = JSON.parse(await getSortedPostsData());
+  return {
+    props: {
+      allPostsData,
+    },
+  };
+}
+
 import styles from "../styles/index.module.scss";
 
 styles["intro--bold--underline"] = [
@@ -12,7 +23,8 @@ styles["intro--bold--underline"] = [
   styles["intro--bold"],
 ].join(" ");
 
-export default function HomePage() {
+export default function HomePage({ allPostsData }) {
+  const latestPost = allPostsData[0];
   return (
     <>
       <Head>
@@ -35,13 +47,26 @@ export default function HomePage() {
                 </a>
               </Link>
             </li>
-            {/* <li className={styles.nav__item}>
+            <li className={styles.nav__item}>
               <Link href="/blog">
                 <a>
                   <span>Blog</span>→
                 </a>
               </Link>
-            </li> */}
+              <div className={styles.blogpost}>
+                <span className={styles.blogpost__pubdate}>
+                  <em>Latest Post</em>: (Published {latestPost.date})
+                </span>
+                <Link href={`/blog/${latestPost.id}`}>
+                  <a className={styles.blogpost__title}>{latestPost.title} </a>
+                </Link>
+                <ul className={styles.blogpost__tag}>
+                  {Array.from(latestPost.tags.entries()).map(([i, tag]) => (
+                    <li key={i}>{tag}</li>
+                  ))}
+                </ul>
+              </div>
+            </li>
             <li className={styles.nav__item}>
               <ul className={styles.nav__social}>
                 <li>

@@ -3,7 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 
 import Footer from "../footer";
-import Article from "./article";
+import Article from "../article";
 import Container from "./container";
 import Header from "../header";
 

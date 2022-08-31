@@ -54,6 +54,18 @@ $neutral-900: #1d2021;
   font-style: italic;
 }
 
+@font-face {
+  font-family: "Source Code";
+  src: url(../public/fonts/SourceCodeVariable-Roman.otf.woff2)
+    format("woff2-variations");
+}
+@font-face {
+  font-family: "Source Code";
+  src: url(../public/fonts/SourceCodeVariable-Italic.otf.woff2)
+    format("woff2-variations");
+  font-style: italic;
+}
+
 @mixin serif {
   font-family: Source Serif, Iowan Old Style, Apple Garamond, Baskerville,
     Times New Roman, Droid Serif, Times, Source Serif Pro, serif,
@@ -64,6 +76,10 @@ $neutral-900: #1d2021;
   font-family: "Source Sans", -apple-system, BlinkMacSystemFont, avenir next,
     avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto,
     arial, sans-serif;
+}
+
+@mixin mono {
+  font-family: "Source Code", monospace;
 }
 
 .body {

@@ -1,5 +1,6 @@
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
+import "highlight.js/scss/base16/solarized-light.scss";
 config.autoAddCss = false;
 
 import Layout from "../components/ui/layout";

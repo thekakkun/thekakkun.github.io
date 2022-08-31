@@ -1,16 +1,16 @@
-@use "../styles/base";
+@use "../../styles/base";
 
 .footer {
-  flex-shrink: 0;
+  @include base.container;
   background-color: base.$green-900;
-  padding: 15px 0;
-
   color: base.$neutral-100;
+  flex-shrink: 0;
 
   &__content {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding: 15px 0;
   }
 
   &__textlink {

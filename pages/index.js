@@ -5,7 +5,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
+import Layout from "../components/layout/layout";
 import { getSortedPostsData } from "../lib/posts";
+import styles from "../styles/index.module.scss";
 
 export async function getStaticProps() {
   const allPostsData = JSON.parse(await getSortedPostsData());
@@ -15,8 +17,6 @@ export async function getStaticProps() {
     },
   };
 }
-
-import styles from "../styles/index.module.scss";
 
 styles["intro--bold--underline"] = [
   styles["intro--underline"],
@@ -38,69 +38,73 @@ export default function HomePage({ allPostsData }) {
           <em>Software&nbsp;dev</em> &amp;&nbsp;
           <em>UX&nbsp;researcher</em>
         </h1>
-        <nav className={styles.nav}>
-          <ul>
-            <li className={styles.nav__item}>
-              <Link href="/about-me">
-                <a>
-                  <span>About me</span>→
-                </a>
-              </Link>
-            </li>
-            <li className={styles.nav__item}>
-              <Link href="/blog">
-                <a>
-                  <span>Blog</span>→
-                </a>
-              </Link>
-              <div className={styles.blogpost}>
-                <span className={styles.blogpost__pubdate}>
-                  <em>Latest Post</em>: (Published {latestPost.date})
-                </span>
-                <Link href={`/blog/${latestPost.id}`}>
-                  <a className={styles.blogpost__title}>{latestPost.title} </a>
-                </Link>
-                <ul className={styles.blogpost__tag}>
-                  {Array.from(latestPost.tags.entries()).map(([i, tag]) => (
-                    <li key={i}>{tag}</li>
-                  ))}
-                </ul>
-              </div>
-            </li>
-            <li className={styles.nav__item}>
-              <ul className={styles.nav__social}>
-                <li>
-                  <a
-                    href="https://github.com/thekakkun/"
-                    rel="noreferrer"
-                    target="_blank"
-                  >
-                    <FontAwesomeIcon icon={faGithub} />
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.linkedin.com/in/hirotokaku/"
-                    rel="noreferrer"
-                    target="_blank"
-                  >
-                    <FontAwesomeIcon icon={faLinkedin} />
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="mailto:kaku.hiroto@gmail.com"
-                    rel="noreferrer"
-                    target="_blank"
-                  >
-                    <FontAwesomeIcon icon={faEnvelope} />
-                  </a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
       </div>
+      <nav className={styles.nav}>
+        <ul>
+          <li className={styles.nav__item}>
+            <Link href="/about-me">
+              <a>
+              <span>About me</span>→
+              </a>
+            </Link>
+          </li>
+          <li className={styles.nav__item}>
+            <Link href="/blog">
+              <a>
+                <span>Blog</span>→
+              </a>
+            </Link>
+            <div className={styles.blogpost}>
+              <div className={styles.blogpost__pubdate}>
+                <em>Latest Post</em>: (Published {latestPost.date})
+              </div>
+              <Link href={`/blog/${latestPost.id}`}>
+                <a className={styles.blogpost__title}>{latestPost.title} </a>
+              </Link>
+              <ul className={styles.blogpost__tag}>
+                {Array.from(latestPost.tags.entries()).map(([i, tag]) => (
+                  <li key={i}>{tag}</li>
+                ))}
+              </ul>
+            </div>
+          </li>
+          <li className={styles.nav__item}>
+            <ul className={styles.nav__social}>
+              <li>
+                <a
+                  href="https://github.com/thekakkun/"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  <FontAwesomeIcon icon={faGithub} />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/hirotokaku/"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  <FontAwesomeIcon icon={faLinkedin} />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:kaku.hiroto@gmail.com"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  <FontAwesomeIcon icon={faEnvelope} />
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
     </>
   );
 }
+
+HomePage.getLayout = function getLayout(page) {
+  return <Layout>{page}</Layout>;
+};

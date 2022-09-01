@@ -17,6 +17,7 @@ export async function getStaticProps() {
 }
 export default function Blog({ allPostsData }) {
   const router = useRouter();
+  console.log(router)
   return (
     <div className={styles.blog}>
       <Head>

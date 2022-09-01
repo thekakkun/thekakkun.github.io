@@ -7,6 +7,7 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 import Layout from "../components/layout/layout";
 import { getSortedPostsData } from "../lib/posts";
+import Tag from "../components/ui/tag";
 import styles from "../styles/index.module.scss";
 
 export async function getStaticProps() {
@@ -44,7 +45,7 @@ export default function HomePage({ allPostsData }) {
           <li className={styles.nav__item}>
             <Link href="/about-me">
               <a>
-              <span>About me</span>→
+                <span>About me</span>→
               </a>
             </Link>
           </li>
@@ -61,11 +62,7 @@ export default function HomePage({ allPostsData }) {
               <Link href={`/blog/${latestPost.id}`}>
                 <a className={styles.blogpost__title}>{latestPost.title} </a>
               </Link>
-              <ul className={styles.blogpost__tag}>
-                {Array.from(latestPost.tags.entries()).map(([i, tag]) => (
-                  <li key={i}>{tag}</li>
-                ))}
-              </ul>
+              <Tag tags={latestPost.tags}></Tag>
             </div>
           </li>
           <li className={styles.nav__item}>

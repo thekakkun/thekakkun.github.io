@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 import Layout from "../../components/layout/layout";
 import Tag from "../../components/ui/tag";
@@ -15,7 +16,7 @@ export async function getStaticProps() {
   };
 }
 export default function Blog({ allPostsData }) {
-  console.log(allPostsData);
+  const router = useRouter();
   return (
     <div className={styles.blog}>
       <Head>
@@ -23,13 +24,12 @@ export default function Blog({ allPostsData }) {
       </Head>
       <ol className={styles.blog__list}>
         {allPostsData.map(({ id, title, date, tags }) => {
-          const pubDate = new Date(date).toLocaleDateString();
           return (
             <li className={styles.list__item} key={id}>
               <Link href={`/blog/${id}`}>
                 <a className={styles.item__link}>
                   <time className={styles.item__pubdate} dateTime={date}>
-                    {pubDate}
+                    {new Date(date).toDateString()}
                   </time>
                   <span className={styles.item__title}>{title}</span>
                 </a>

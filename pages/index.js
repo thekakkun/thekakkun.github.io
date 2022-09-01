@@ -25,8 +25,8 @@ styles["intro--bold--underline"] = [
 ].join(" ");
 
 export default function HomePage({ allPostsData }) {
+  console.log(allPostsData);
   const latestPost = allPostsData[0];
-  const pubDate = new Date(latestPost.date).toLocaleDateString();
   return (
     <>
       <Head>
@@ -60,7 +60,7 @@ export default function HomePage({ allPostsData }) {
               <div className={styles.blogpost__pubdate}>
                 <em>Latest Post</em>: (Published{" "}
                 <time dateTime={latestPost.date}></time>
-                {pubDate})
+                {new Date(latestPost.date).toDateString()})
               </div>
               <Link href={`/blog/${latestPost.id}`}>
                 <a className={styles.blogpost__title}>{latestPost.title} </a>

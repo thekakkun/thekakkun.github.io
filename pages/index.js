@@ -5,8 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
-import Layout from "../components/layout/layout";
 import { getSortedPostsData } from "../lib/posts";
+import Layout from "../components/layout/layout";
 import Tag from "../components/ui/tag";
 import styles from "../styles/index.module.scss";
 
@@ -26,6 +26,7 @@ styles["intro--bold--underline"] = [
 
 export default function HomePage({ allPostsData }) {
   const latestPost = allPostsData[0];
+  const pubDate = new Date(latestPost.date).toLocaleDateString();
   return (
     <>
       <Head>
@@ -57,7 +58,9 @@ export default function HomePage({ allPostsData }) {
             </Link>
             <div className={styles.blogpost}>
               <div className={styles.blogpost__pubdate}>
-                <em>Latest Post</em>: (Published {latestPost.date})
+                <em>Latest Post</em>: (Published{" "}
+                <time dateTime={latestPost.date}></time>
+                {pubDate})
               </div>
               <Link href={`/blog/${latestPost.id}`}>
                 <a className={styles.blogpost__title}>{latestPost.title} </a>

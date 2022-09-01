@@ -1,0 +1,42 @@
+@use "../styles/base";
+
+.blog {
+  @include base.container;
+
+  &__list {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .list {
+    &__item {
+      margin-bottom: 20px;
+      text-decoration: none;
+      .item {
+        &__link {
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+        &__title {
+          @include base.serif;
+          color: base.$neutral-900;
+          font-size: 1.6rem;
+          font-weight: bold;
+          display: block;
+          width: fit-content;
+          margin-bottom: 5px;
+          text-decoration: none;
+        }
+
+        &__pubdate {
+          color: base.$neutral-900;
+          text-decoration: none;
+          margin-bottom: 2px;
+          display: block;
+          width: fit-content;
+        }
+      }
+    }
+  }
+}

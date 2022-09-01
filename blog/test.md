@@ -1,7 +1,6 @@
 ---
-title: Two Forms of Pre-rendering
+title: This Is a Test Post
 date: 2020-01-01
-food: Pizza
 tags: [foo, bar, baz]
 ---
 

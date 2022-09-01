@@ -1,6 +1,6 @@
 ---
-title: "Converting Markdown Files into HTML"
-date: 2022-8-25
+title: Converting Markdown Files into HTML
+date: 2022-08-25
 tags: ["front end", "markdown"]
 ---
 

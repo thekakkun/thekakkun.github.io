@@ -1,3 +1,4 @@
+import Tag from "../ui/tag";
 import styles from "./article.module.scss";
 
 export default function Article({ title, date, tags, children }) {
@@ -5,20 +6,15 @@ export default function Article({ title, date, tags, children }) {
     <article className={styles.article}>
       <div className={styles.article__head}>
         <h1>{title}</h1>
-        {tags && (
-          <ul className={styles.head__tags}>
-            {Array.from(tags.entries()).map(([i, tag]) => (
-              <li key={i}>{tag}</li>
-            ))}
-          </ul>
-        )}
+        {tags && <Tag tags={tags}></Tag>}
         {date && (
           <span className={styles.head__pubdate}>
-            Published: <time dateTime={date}>{date}</time>
+            Published:{" "}
+            <time dateTime={date}>{new Date(date).toDateString()}</time>
           </span>
         )}
       </div>
-      
+
       {children}
     </article>
   );

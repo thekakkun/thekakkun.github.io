@@ -17,7 +17,12 @@ export async function getStaticProps() {
 }
 export default function Blog({ allPostsData }) {
   const router = useRouter();
-  console.log(router)
+  const query = router.query.tag;
+
+  if (query) {
+    allPostsData = allPostsData.filter((post) => post.tags.includes(query));
+  }
+
   return (
     <div className={styles.blog}>
       <Head>

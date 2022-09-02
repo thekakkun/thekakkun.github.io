@@ -13,6 +13,7 @@
   color: base.$neutral-900;
 
   .main {
+    @include base.container;
     flex: 1 0 auto;
     background-color: base.$neutral-100;
   }
@@ -23,6 +24,7 @@
     .main {
       background: none;
       position: relative;
+      padding: 0;
     }
   }
 

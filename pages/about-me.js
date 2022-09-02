@@ -6,14 +6,11 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 import styles from "../styles/about-me.module.scss";
-import List from "../components/ui/list";
 import Button from "../components/ui/button";
 import Layout from "../components/layout/layout";
 import Article from "../components/layout/article";
 
 const imageLoader = require("../loader");
-
-const interests = ["Music", "Eating and cooking", "Reading", "Video games"];
 
 export default function AboutMe() {
   return (
@@ -62,7 +59,13 @@ export default function AboutMe() {
                 things to discover and learn about. My hobbies always give me a
                 wide range of things to dig into and enjoy.
               </p>
-              <List items={interests}></List>
+              <ul>
+                <li>Food &amp; cooking</li>
+                <li>Music</li>
+                <li>DIY electronics</li>
+                <li>Video games</li>
+                <li>Reading</li>
+              </ul>
             </section>
 
             <section>

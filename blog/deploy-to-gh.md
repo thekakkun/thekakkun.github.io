@@ -1,15 +1,10 @@
 ---
 title: Deploying a Next.js site to GitHub Pages
-tags: ["front end"]
+date: 2022-09-02
+tags: ["front end", "homepage"]
 ---
 
 This site you're currently looking at was created using [Next.js](https://nextjs.org/) and hosted on [GitHub Pages](https://pages.github.com/). In this article, I'd like to go over the whys and hows of creating this website.
-
-## Why GitHub pages?
-
-This website was meant to showcase my skills, both in terms of the code underlying the website as well as the projects featured within it. I don't expect much traffic, and there's no need for a server to handle user data or dynamically manage information. In addition, a static site has the benefit of being easier to develop for and being more performant for the user.
-
-Since I intended the source code to be available on GitHub, it was natural to use the hosting service provided by them. While I could have also registered a domain name, I couldn't justify paying for the service.
 
 ## Choosing a front end framework
 
@@ -29,10 +24,20 @@ Since I was learning (and still am learning) React at the time of inception, I w
 
 It's likely I would have been just as happy with Gatsby as I would be with Next.js. The points I mentioned above were enough to nudge me towards Next.js, and I was eager to move on to actually creating the website.
 
-## Hosting the website on GitHub Pages
+## Why GitHub pages?
+
+This website was meant to showcase my skills, both in terms the actual coding of the site as well as the projects featured within it. Since I intended the source code to be available on GitHub, it was natural to use the free hosting service provided by them. This does come with some limitations:
+
+- The URL will be a subdomain of GitHub
+- It can only host static sites
+- There are storage, bandwidth, and build quotas
+- You are not allowed to use the site to facilitate commercial transactions.
+
+These limitations were acceptable as this was just a simple personal site, and I did not expect it to get much traffic. A static site was good enough for my needs, and it comes with the benefits of being easier to develop for and being more performant for the user.
+While I could have registered a domain name and hosting service, I couldn't justify paying for those services.
+
+### Steps to host the website on GitHub Pages
 
 The Next.js source code can't be directly used by the browser. Instead, the site files need to be built using `next build`, which generates an optimized version of the website for use.
 
 Thankfully, GitHub provides a service called GitHub actions, which can automatically build the site files on their servers and deploy the files for viewing on a browser every time the Next.js source is updated. The action workflow can be customized as necessary, but GitHub provides some pre-defined Actions for common libraries including Next.js.
-
-The thought process and steps I went through above are quite rudimentary. It's meant as a note-to-self on some things I learned, but hopefully, it'll be of help to someone starting out on creating a static website on GitHub Pages.

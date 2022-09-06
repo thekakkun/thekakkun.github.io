@@ -1,7 +1,7 @@
 ---
 title: This Is a Test Post
 date: 2020-01-01
-tags: [foo, bar, baz]
+tags: [markdown, front end]
 ---
 
 ## hello world

@@ -51,6 +51,7 @@
 
     code {
       background-color: base.$neutral-200;
+      
     }
 
     sup {
@@ -105,6 +106,8 @@
   code {
     @include base.mono;
     margin-bottom: 10px;
+    font-size: 1.1rem;
+    line-height: 1.1;
   }
 
   table {

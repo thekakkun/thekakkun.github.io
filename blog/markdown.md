@@ -1,7 +1,7 @@
 ---
 title: Converting Markdown Files into HTML
 date: 2022-08-25
-tags: ["front end", "markdown"]
+tags: [front end, markdown]
 ---
 
 These blog posts are written in Markdown and converted into HTML using the [unified ecosystem](https://unifiedjs.com). This particular post isn't really meant to describe how it's being done. This post really only exists so that I can check if things are working correctly, and the CSS styles look like I want them to.

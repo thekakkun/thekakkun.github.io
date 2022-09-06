@@ -1,7 +1,7 @@
 ---
 title: Deploying a Next.js site to GitHub Pages
 date: 2022-09-02
-tags: ["front end", "homepage"]
+tags: [front end, homepage]
 ---
 
 This site you're currently looking at was created using [Next.js](https://nextjs.org/) and hosted on [GitHub Pages](https://pages.github.com/). In this article, I'd like to go over the whys and hows of creating this website.

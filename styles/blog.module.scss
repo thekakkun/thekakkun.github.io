@@ -3,6 +3,38 @@
 .blog {
   @include base.container;
 
+  &__filter {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: base.$green-200;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+
+    .filter {
+      &__title {
+        @include base.serif;
+        font-size: 1.4rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      &__current {
+        cursor: pointer;
+        margin-bottom: 10px;
+        display: inline-block;
+        
+        p {
+          text-decoration: underline;
+          display: inline-block;
+        }
+        
+        span {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
   &__list {
     max-width: 1000px;
     margin: 0 auto;
@@ -11,6 +43,7 @@
     &__item {
       margin-bottom: 20px;
       text-decoration: none;
+      width: fit-content;
       .item {
         &__link {
           text-decoration: none;

@@ -1,6 +1,7 @@
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import "highlight.js/scss/base16/solarized-light.scss";
+import "katex/dist/katex.min.css";
 config.autoAddCss = false;
 
 import "../styles/reset.css";

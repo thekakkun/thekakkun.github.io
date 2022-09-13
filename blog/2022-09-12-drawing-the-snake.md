@@ -4,7 +4,7 @@ tags: [speed snek, math]
 date: 2022-09-12
 ---
 
-In the game of Speed Snek, the snek segments are drawn using solid links (like an articulated bus!). I need to figure out how to place these solid line segments along the user's input, which will be a squiggly line drawn using a finger or pointer.
+This is a post about the development of [Speed Snek](https://github.com/thekakkun/speed-snek). In the game of Speed Snek, the snek segments are drawn using solid links (like an articulated bus!). I need to figure out how to place these solid line segments along the user's input, which will be a squiggly line drawn using a finger or pointer.
 
 ## The general process
 

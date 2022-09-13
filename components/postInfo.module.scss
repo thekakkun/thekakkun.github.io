@@ -1,0 +1,29 @@
+@use "../styles/base";
+
+.post {
+  &__link {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__pubdate {
+    color: base.$neutral-900;
+    text-decoration: none;
+    margin-bottom: 2px;
+    display: block;
+    width: fit-content;
+  }
+
+  &__title {
+    @include base.serif;
+    color: base.$neutral-900;
+    font-size: 1.6rem;
+    font-weight: bold;
+    display: block;
+    width: fit-content;
+    margin-bottom: 5px;
+    text-decoration: none;
+  }
+}

@@ -6,6 +6,7 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 import Layout from "../../components/layout/layout";
 import Tag from "../../components/ui/tag";
+import PostInfo from "../../components/postInfo";
 import { getSortedPostsData } from "../../lib/posts";
 import styles from "../../styles/blog.module.scss";
 
@@ -53,15 +54,12 @@ export default function Blog({ allPostsData }) {
           {allPostsData.map(({ id, title, date, tags }) => {
             return (
               <li className={styles.list__item} key={id}>
-                <Link href={`/blog/${id}`}>
-                  <a className={styles.item__link}>
-                    <time className={styles.item__pubdate} dateTime={date}>
-                      {new Date(date).toDateString()}
-                    </time>
-                    <span className={styles.item__title}>{title}</span>
-                  </a>
-                </Link>
-                <Tag tags={tags}></Tag>
+                <PostInfo
+                  id={id}
+                  title={title}
+                  date={date}
+                  tags={tags}
+                ></PostInfo>
               </li>
             );
           })}

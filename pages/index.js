@@ -57,9 +57,12 @@ export default function HomePage({ allPostsData }) {
             </Link>
             <div className={styles.blogpost}>
               <div className={styles.blogpost__pubdate}>
-                <em>Latest Post</em>: (Published{" "}
-                <time dateTime={latestPost.date}></time>
-                {new Date(latestPost.date).toDateString()})
+                <em>Latest Post</em>:{" "}
+                <time
+                  dateTime={latestPost.date}
+                  suppressHydrationWarning={true}
+                ></time>
+                {new Date(latestPost.date).toLocaleDateString()}
               </div>
               <Link href={`/blog/${latestPost.id}`}>
                 <a className={styles.blogpost__title}>{latestPost.title} </a>

@@ -1,21 +1,11 @@
-import Tag from "../ui/tag";
+import PostInfo from "../postInfo";
 import styles from "./article.module.scss";
 
-export default function Article({ title, date, tags, children }) {
+export default function Article({ children }) {
   return (
     <article className={styles.article}>
-      <div className={styles.article__head}>
-        <h1>{title}</h1>
-        {tags && <Tag tags={tags}></Tag>}
-        {date && (
-          <span className={styles.head__pubdate}>
-            Published:{" "}
-            <time dateTime={date}>{new Date(date).toDateString()}</time>
-          </span>
-        )}
-      </div>
-
-      {children}
+      <PostInfo {...arguments[0]}></PostInfo>
+      <div className={styles.article__body}> {children}</div>
     </article>
   );
 }

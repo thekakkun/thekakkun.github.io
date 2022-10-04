@@ -1,6 +1,6 @@
 ---
 title: "Developing Speed Snek: Defining the In-Game Objects"
-tags: [object oriented programming, speed snek, front end]
+tags: [object oriented programming, speed snek, front end, javascript]
 date: 2022-09-07
 ---
 

@@ -1,12 +1,10 @@
 ---
-title: "Developing Speed Snek: Defining the In-Game Objects"
+title: "Speed Snek: Defining the In-Game Objects"
 tags: [object oriented programming, speed snek, front end, javascript]
 date: 2022-09-07
 ---
 
-## Motivation
-
-I've known about object oriented programming (OOP) for a while, and I've used objects and classes in my code whenever it seemed like a good idea. However, 99% of my code uses functional programming, and I haven't had a good chance to go in-depth with OOP. I figured creating a game would be a good chance to actually use OOP.
+This is a post about the development of [Speed Snek](https://github.com/thekakkun/speed-snek). I've known about object oriented programming (OOP) for a while, and I've used objects and classes in my code whenever it seemed like a good idea. However, 99% of my code uses functional programming, and I haven't had a good chance to go in-depth with OOP. I figured creating this game would be a good chance to actually use OOP.
 
 ## Implementing OOP
 

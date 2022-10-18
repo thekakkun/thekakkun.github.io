@@ -5,12 +5,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
+import { imageLoader } from "../loader";
 import styles from "../styles/about-me.module.scss";
 import Button from "../components/ui/button";
 import Layout from "../components/layout/layout";
 import Article from "../components/layout/article";
 
-const imageLoader = require("../loader");
 
 export default function AboutMe() {
   return (

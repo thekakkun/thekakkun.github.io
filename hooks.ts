@@ -19,9 +19,11 @@ export const useOnClickOutside = (
   }, [ref, handler]);
 };
 
-type StringOrUndefined<T extends string | undefined> = T extends string
+type StringOrUndefined<T extends PostData["date"]> = T extends string
   ? string
-  : undefined;
+  : T extends undefined
+  ? undefined
+  : never;
 
 export const useFormattedDate = <T extends PostData["date"]>(
   date: T
@@ -36,5 +38,5 @@ export const useFormattedDate = <T extends PostData["date"]>(
     }
   }, [date]);
 
-  return postDate;
+  return postDate as StringOrUndefined<T>;
 };

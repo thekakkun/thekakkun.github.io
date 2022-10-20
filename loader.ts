@@ -1,3 +1,3 @@
-export function imageLoader({ src }) {
+export function imageLoader({ src }: { src: string }) {
   return `/images/${src}`;
 }

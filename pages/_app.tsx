@@ -3,6 +3,7 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import "highlight.js/scss/base16/solarized-light.scss";
 import "katex/dist/katex.min.css";
 import { AppProps } from "next/app";
+import { ReactNode } from "react";
 config.autoAddCss = false;
 
 import "../styles/reset.css";
@@ -13,7 +14,7 @@ console.log(
 );
 export default function MyApp({ Component, pageProps }: AppProps) {
   // Use the layout defined at the page level, if available
-  const getLayout = Component.getLayout || ((page: JSX.Element) => page);
+  const getLayout = Component.getLayout || ((page: ReactNode) => page);
 
   return getLayout(<Component {...pageProps} />);
 }

@@ -2,7 +2,6 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 
 import Article from "../../components/layout/article";
-import Layout from "../../components/layout/layout";
 import { PostData, getAllPostIds, getPostData } from "../../lib/posts";
 
 export default function Post({ postData }: { postData: PostData }) {
@@ -19,10 +18,6 @@ export default function Post({ postData }: { postData: PostData }) {
   );
 }
 
-Post.getLayout = function getLayout(page: React.ReactNode) {
-  return <Layout>{page}</Layout>;
-};
-
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getAllPostIds();
   return {
@@ -32,10 +27,16 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const postData = JSON.parse(await getPostData(params.id as string));
-  return {
-    props: {
-      postData,
-    },
-  };
+  if (params) {
+    const postData = JSON.parse(await getPostData(params.id as string));
+    return {
+      props: {
+        postData,
+      },
+    };
+  } else {
+    return {
+      props: {},
+    };
+  }
 };

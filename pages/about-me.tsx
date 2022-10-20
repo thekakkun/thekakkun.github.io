@@ -8,13 +8,11 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { imageLoader } from "../loader";
 import styles from "../styles/about-me.module.scss";
 import Button from "../components/ui/button";
-import Layout from "../components/layout/layout";
 import Article from "../components/layout/article";
-
 
 export default function AboutMe() {
   return (
-    <>
+    <Article>
       <Head>
         <title>Hiroto Kaku - About me</title>
       </Head>
@@ -111,14 +109,6 @@ export default function AboutMe() {
           </div>
         </div>
       </div>
-    </>
+    </Article>
   );
 }
-
-AboutMe.getLayout = function getLayout(page: JSX.Element) {
-  return (
-    <Layout>
-      <Article>{page}</Article>
-    </Layout>
-  );
-};

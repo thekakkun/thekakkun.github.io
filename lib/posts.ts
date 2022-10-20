@@ -11,13 +11,16 @@ import rehypeHighlight from "rehype-highlight";
 import rehypeKatex from "rehype-katex";
 import rehypeStringify from "rehype-stringify/lib";
 import { Root } from "hast";
-import { Literal, YAML } from "mdast";
+import { YAML } from "mdast";
 
-export interface PostData {
+export interface PostInfo {
   id: string;
   title: string;
   tags: string[];
   date?: string;
+}
+
+export interface PostData extends PostInfo {
   contentHtml: string;
 }
 

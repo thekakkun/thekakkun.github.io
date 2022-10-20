@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
-import { getSortedPostsData } from "../lib/posts";
+import { getSortedPostsData, PostData } from "../lib/posts";
 import Layout from "../components/layout/layout";
 import Tag from "../components/ui/tag";
 import styles from "../styles/index.module.scss";
@@ -19,12 +19,11 @@ export async function getStaticProps() {
   };
 }
 
-styles["intro--bold--underline"] = [
-  styles["intro--underline"],
-  styles["intro--bold"],
-].join(" ");
-
-export default function HomePage({ allPostsData }) {
+export default function HomePage({
+  allPostsData,
+}: {
+  allPostsData: PostData[];
+}) {
   const latestPost = allPostsData[0];
   return (
     <>
@@ -59,10 +58,10 @@ export default function HomePage({ allPostsData }) {
               <div className={styles.blogpost__pubdate}>
                 <em>Latest Post</em>:{" "}
                 <time
-                  dateTime={latestPost.date}
+                  dateTime={latestPost.date ?? ""}
                   suppressHydrationWarning={true}
                 ></time>
-                {new Date(latestPost.date).toLocaleDateString()}
+                {new Date(latestPost.date ?? "").toLocaleDateString()}
               </div>
               <Link href={`/blog/${latestPost.id}`}>
                 <a className={styles.blogpost__title}>{latestPost.title} </a>
@@ -107,6 +106,6 @@ export default function HomePage({ allPostsData }) {
   );
 }
 
-HomePage.getLayout = function getLayout(page) {
+HomePage.getLayout = function getLayout(page: JSX.Element) {
   return <Layout>{page}</Layout>;
 };

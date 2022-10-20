@@ -1,4 +1,5 @@
-import { useRef } from "react";
+import React, { useRef, useState } from "react";
+import { useRouter } from "next/router";
 import Link from "next/link";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,23 +10,22 @@ import { useOnClickOutside } from "../../hooks";
 
 import styles from "./header.module.scss";
 
-export default function Header({ menu, setMenu, currentRoute }) {
-  const closeMenu = () => setMenu(false);
-  const toggleMenu = () => setMenu(!menu);
+export default function Header({ home }: { home: boolean }) {
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  const node = useRef();
-  useOnClickOutside(node, () => setMenu(false));
+  const node = useRef<HTMLElement>(null);
+  useOnClickOutside(node, () => setMenuOpen(false));
 
-  function MenuItem({ route, text }) {
+  function MenuItem({ route, text }: { route: string; text: string }) {
     return (
       <li
         className={`
           ${styles.menu__item}
-          ${route === currentRoute && styles["menu__item--current"]}
+          ${route === useRouter().route && styles["menu__item--current"]}
         `}
       >
         <Link href={route}>
-          <a onClick={closeMenu}>{text}</a>
+          <a onClick={() => setMenuOpen(false)}>{text}</a>
         </Link>
       </li>
     );
@@ -37,16 +37,16 @@ export default function Header({ menu, setMenu, currentRoute }) {
         ref={node}
         className={`
           ${styles.nav}
-          ${menu && styles["nav--open"]}
+          ${menuOpen && styles["nav--open"]}
         `}
       >
         <div className={styles.main}>
           <Link href="/">
             <a
-              onClick={closeMenu}
+              onClick={() => setMenuOpen(false)}
               className={`
                 ${styles.main__home}
-                ${currentRoute === "/" && styles["main__home--home"]}
+                ${home && styles["main__home--home"]}
               `}
             >
               <h1>Hiroto Kaku</h1>
@@ -55,18 +55,18 @@ export default function Header({ menu, setMenu, currentRoute }) {
           <button
             className={`
               ${styles.main__button}
-              ${currentRoute === "/" && styles["main__button--home"]}
+              ${home && styles["main__button--home"]}
             `}
-            onClick={toggleMenu}
+            onClick={() => setMenuOpen(!menuOpen)}
           >
-            <FontAwesomeIcon icon={menu ? faXmark : faBars} />
+            <FontAwesomeIcon icon={menuOpen ? faXmark : faBars} />
           </button>
         </div>
 
         <ul
           className={`
           ${styles.menu}
-          ${menu && styles["menu--open"]}
+          ${menuOpen && styles["menu--open"]}
           `}
         >
           <hr className={styles.menu__item}></hr>

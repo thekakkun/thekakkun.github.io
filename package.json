@@ -28,7 +28,10 @@
     "lint": "next lint"
   },
   "devDependencies": {
-    "@types/node": "^18.11.0",
+    "@types/hast": "^2.3.4",
+    "@types/js-yaml": "^4.0.5",
+    "@types/mdast": "^3.0.10",
+    "@types/node": "^18.11.2",
     "@types/react": "^18.0.21",
     "eslint": "8.16.0",
     "eslint-config-next": "12.1.6",

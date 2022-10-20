@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import styles from "./tag.module.scss";
 
-export default function Tag({ tags }) {
+export default function Tag({ tags }: { tags: string[] }) {
   return (
     <ul className={styles.tags}>
       {tags.sort().map((tag) => (

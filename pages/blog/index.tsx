@@ -7,8 +7,9 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import Layout from "../../components/layout/layout";
 import Tag from "../../components/ui/tag";
 import PostInfo from "../../components/postInfo";
-import { getSortedPostsData } from "../../lib/posts";
+import { getSortedPostsData, PostData } from "../../lib/posts";
 import styles from "../../styles/blog.module.scss";
+import React from "react";
 
 export async function getStaticProps() {
   const allPostsData = JSON.parse(await getSortedPostsData());
@@ -18,13 +19,19 @@ export async function getStaticProps() {
     },
   };
 }
-export default function Blog({ allPostsData }) {
+export default function Blog({ allPostsData }: { allPostsData: PostData[] }) {
   const router = useRouter();
-  const query = router.query.tag;
+  let query = router.query.tag;
   const allTags = [...new Set(allPostsData.map((post) => post.tags).flat())];
 
   if (query) {
-    allPostsData = allPostsData.filter((post) => post.tags.includes(query));
+    if (typeof query === "object") {
+      allPostsData = allPostsData.filter((post) =>
+        post.tags.includes(query[0])
+      );
+    } else {
+      allPostsData = allPostsData.filter((post) => post.tags.includes(query));
+    }
   }
 
   return (
@@ -57,7 +64,7 @@ export default function Blog({ allPostsData }) {
                 <PostInfo
                   id={id}
                   title={title}
-                  date={date}
+                  date={date ?? ""}
                   tags={tags}
                 ></PostInfo>
               </li>
@@ -69,6 +76,6 @@ export default function Blog({ allPostsData }) {
   );
 }
 
-Blog.getLayout = function getLayout(page) {
+Blog.getLayout = function getLayout(page: React.ReactNode) {
   return <Layout>{page}</Layout>;
 };

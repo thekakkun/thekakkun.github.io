@@ -73,7 +73,6 @@ export default function AboutMe() {
               <ul className={styles.links}>
                 <li>
                   <Button
-                    styles="display:inline"
                     text="Get my resume"
                     href="https://onedrive.live.com/download?cid=8781DAED1A9AA5B5&resid=8781DAED1A9AA5B5%21539430&authkey=AMUNkvnFPSgxaUU"
                     color="blue"
@@ -116,7 +115,7 @@ export default function AboutMe() {
   );
 }
 
-AboutMe.getLayout = function getLayout(page) {
+AboutMe.getLayout = function getLayout(page: JSX.Element) {
   return (
     <Layout>
       <Article>{page}</Article>

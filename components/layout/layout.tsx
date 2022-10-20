@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/router";
 
 import Header from "./header";
@@ -6,9 +6,8 @@ import Footer from "./footer";
 
 import styles from "./layout.module.scss";
 
-export default function Layout({ children }) {
+export default function Layout({ children }: { children: React.ReactNode }) {
   const router = useRouter();
-  const [menu, setMenu] = useState(false);
 
   return (
     <div
@@ -17,9 +16,9 @@ export default function Layout({ children }) {
       ${router.route === "/" && styles["body--home"]}
     `}
     >
-      <Header menu={menu} setMenu={setMenu} currentRoute={router.route} />
+      <Header home={router.route === "/"} />
       <main className={styles.main}>{children}</main>
-      <Footer className={styles.footer} />
+      <Footer />
     </div>
   );
 }

@@ -3,7 +3,17 @@ import Link from "next/link";
 import Tag from "./ui/tag";
 import styles from "./postInfo.module.scss";
 
-export default function PostInfo({ id, title, date, tags }) {
+export default function PostInfo({
+  id,
+  title,
+  date,
+  tags,
+}: {
+  id: string;
+  title: string;
+  date: string;
+  tags: string[];
+}) {
   return (
     <div className={styles.post}>
       <Link href={`/blog/${id}`}>

@@ -5,12 +5,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
+import { imageLoader } from "../loader";
 import styles from "../styles/about-me.module.scss";
 import Button from "../components/ui/button";
 import Layout from "../components/layout/layout";
 import Article from "../components/layout/article";
 
-const imageLoader = require("../loader");
 
 export default function AboutMe() {
   return (
@@ -73,7 +73,6 @@ export default function AboutMe() {
               <ul className={styles.links}>
                 <li>
                   <Button
-                    styles="display:inline"
                     text="Get my resume"
                     href="https://onedrive.live.com/download?cid=8781DAED1A9AA5B5&resid=8781DAED1A9AA5B5%21539430&authkey=AMUNkvnFPSgxaUU"
                     color="blue"
@@ -116,7 +115,7 @@ export default function AboutMe() {
   );
 }
 
-AboutMe.getLayout = function getLayout(page) {
+AboutMe.getLayout = function getLayout(page: JSX.Element) {
   return (
     <Layout>
       <Article>{page}</Article>

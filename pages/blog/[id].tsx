@@ -1,10 +1,11 @@
+import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 
 import Article from "../../components/layout/article";
 import Layout from "../../components/layout/layout";
-import { getAllPostIds, getPostData } from "../../lib/posts";
+import { PostData, getAllPostIds, getPostData } from "../../lib/posts";
 
-export default function Post({ postData }) {
+export default function Post({ postData }: { postData: PostData }) {
   return (
     <>
       <Head>
@@ -18,23 +19,23 @@ export default function Post({ postData }) {
   );
 }
 
-Post.getLayout = function getLayout(page) {
+Post.getLayout = function getLayout(page: React.ReactNode) {
   return <Layout>{page}</Layout>;
 };
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getAllPostIds();
   return {
     paths,
     fallback: false,
   };
-}
+};
 
-export async function getStaticProps({ params }) {
-  const postData = JSON.parse(await getPostData(params.id));
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const postData = JSON.parse(await getPostData(params.id as string));
   return {
     props: {
       postData,
     },
   };
-}
+};

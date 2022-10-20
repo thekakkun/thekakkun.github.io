@@ -10,6 +10,15 @@ import remarkRehype from "remark-rehype";
 import rehypeHighlight from "rehype-highlight";
 import rehypeKatex from "rehype-katex";
 import rehypeStringify from "rehype-stringify/lib";
+import { Root } from "hast";
+
+export interface PostData {
+  id: string;
+  title: string;
+  tags: string[];
+  date?: string;
+  contentHtml: string;
+}
 
 const postsDirectory = path.join(process.cwd(), "blog");
 
@@ -26,10 +35,10 @@ export async function getSortedPostsData() {
       const fullPath = path.join(postsDirectory, fileName);
       const fileContents = await fs.promises.readFile(fullPath, "utf8");
 
-      let data;
-      await remark()
+      let data!: PostData;
+      const foo = await remark()
         .use(remarkFrontmatter, ["yaml"])
-        .use(() => (tree) => {
+        .use(() => (tree: Root) => {
           data = { id, ...yaml.load(tree.children[0].value) };
         })
         .process(fileContents);
@@ -57,15 +66,15 @@ export function getAllPostIds() {
   });
 }
 
-export async function getPostData(id) {
+export async function getPostData(id: string) {
   const fullPath = path.join(postsDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
 
-  let data;
+  let data: PostData;
 
   const processedContent = await remark()
     .use(remarkFrontmatter, ["yaml"])
-    .use(() => (tree) => {
+    .use(() => (tree: Root) => {
       data = { id, ...yaml.load(tree.children[0].value) };
     })
     .use(remarkGfm)

@@ -9,6 +9,7 @@ import { getSortedPostsData, PostData } from "../lib/posts";
 import Layout from "../components/layout/layout";
 import Tag from "../components/ui/tag";
 import styles from "../styles/index.module.scss";
+import { useFormattedDate } from "../hooks";
 
 export async function getStaticProps() {
   const allPostsData = JSON.parse(await getSortedPostsData());
@@ -25,6 +26,7 @@ export default function HomePage({
   allPostsData: PostData[];
 }) {
   const latestPost = allPostsData[0];
+
   return (
     <>
       <Head>
@@ -57,11 +59,9 @@ export default function HomePage({
             <div className={styles.blogpost}>
               <div className={styles.blogpost__pubdate}>
                 <em>Latest Post</em>:{" "}
-                <time
-                  dateTime={latestPost.date ?? ""}
-                  suppressHydrationWarning={true}
-                ></time>
-                {new Date(latestPost.date ?? "").toLocaleDateString()}
+                <time dateTime={latestPost.date}>
+                  {useFormattedDate(latestPost.date)}
+                </time>
               </div>
               <Link href={`/blog/${latestPost.id}`}>
                 <a className={styles.blogpost__title}>{latestPost.title} </a>

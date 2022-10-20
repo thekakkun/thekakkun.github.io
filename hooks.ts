@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { getPostData, PostData } from "./lib/posts";
 
 export const useOnClickOutside = (
   ref: React.RefObject<HTMLElement>,
@@ -16,4 +17,24 @@ export const useOnClickOutside = (
       document.removeEventListener("mousedown", listener);
     };
   }, [ref, handler]);
+};
+
+type StringOrUndefined<T extends string | undefined> = T extends string
+  ? string
+  : undefined;
+
+export const useFormattedDate = <T extends PostData["date"]>(
+  date: T
+): StringOrUndefined<T> => {
+  const [postDate, setPostDate] = useState<PostData["date"]>(date);
+
+  useEffect(() => {
+    if (date) {
+      setPostDate(new Date(date).toLocaleDateString());
+    } else {
+      setPostDate(undefined);
+    }
+  }, [date]);
+
+  return postDate;
 };

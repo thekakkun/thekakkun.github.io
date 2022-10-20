@@ -11,12 +11,16 @@ import rehypeHighlight from "rehype-highlight";
 import rehypeKatex from "rehype-katex";
 import rehypeStringify from "rehype-stringify/lib";
 import { Root } from "hast";
+import { YAML } from "mdast";
 
-export interface PostData {
+export interface PostInfo {
   id: string;
   title: string;
   tags: string[];
   date?: string;
+}
+
+export interface PostData extends PostInfo {
   contentHtml: string;
 }
 
@@ -36,10 +40,14 @@ export async function getSortedPostsData() {
       const fileContents = await fs.promises.readFile(fullPath, "utf8");
 
       let data!: PostData;
-      const foo = await remark()
+      await remark()
         .use(remarkFrontmatter, ["yaml"])
         .use(() => (tree: Root) => {
-          data = { id, ...yaml.load(tree.children[0].value) };
+          const meta = tree.children[0] as unknown as YAML;
+          data = {
+            id,
+            ...(yaml.load(meta.value) as object),
+          } as PostData;
         })
         .process(fileContents);
 
@@ -48,7 +56,7 @@ export async function getSortedPostsData() {
   );
 
   return JSON.stringify(
-    allPostsData.sort(({ date: a }, { date: b }) => (a < b ? 1 : -1))
+    allPostsData.sort(({ date: a = "" }, { date: b = "" }) => (a < b ? 1 : -1))
   );
 }
 
@@ -70,12 +78,16 @@ export async function getPostData(id: string) {
   const fullPath = path.join(postsDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
 
-  let data: PostData;
+  let data!: PostData;
 
   const processedContent = await remark()
     .use(remarkFrontmatter, ["yaml"])
     .use(() => (tree: Root) => {
-      data = { id, ...yaml.load(tree.children[0].value) };
+      const meta = tree.children[0] as unknown as YAML;
+      data = {
+        id,
+        ...(yaml.load(meta.value) as object),
+      } as PostData;
     })
     .use(remarkGfm)
     .use(remarkMath)

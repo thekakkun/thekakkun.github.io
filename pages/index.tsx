@@ -105,7 +105,3 @@ export default function HomePage({
     </>
   );
 }
-
-HomePage.getLayout = function getLayout(page: JSX.Element) {
-  return <Layout>{page}</Layout>;
-};

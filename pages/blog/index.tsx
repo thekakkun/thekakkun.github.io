@@ -1,12 +1,10 @@
 import Head from "next/head";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
-import Layout from "../../components/layout/layout";
 import Tag from "../../components/ui/tag";
-import PostInfo from "../../components/postInfo";
+import PostInformation from "../../components/postInfo";
 import { getSortedPostsData, PostData } from "../../lib/posts";
 import styles from "../../styles/blog.module.scss";
 import React from "react";
@@ -24,14 +22,16 @@ export default function Blog({ allPostsData }: { allPostsData: PostData[] }) {
   let query = router.query.tag;
   const allTags = [...new Set(allPostsData.map((post) => post.tags).flat())];
 
+  let relevantPostsData: PostData[];
   if (query) {
-    if (typeof query === "object") {
-      allPostsData = allPostsData.filter((post) =>
-        post.tags.includes(query[0])
-      );
-    } else {
-      allPostsData = allPostsData.filter((post) => post.tags.includes(query));
+    if (typeof query ==='object') {
+      query = query[0]
     }
+    relevantPostsData = allPostsData.filter((post) =>
+      post.tags.includes(query as string)
+    );
+  } else {
+    relevantPostsData = allPostsData;
   }
 
   return (
@@ -58,15 +58,15 @@ export default function Blog({ allPostsData }: { allPostsData: PostData[] }) {
           <Tag tags={allTags}></Tag>
         </div>
         <ol className={styles.blog__list}>
-          {allPostsData.map(({ id, title, date, tags }) => {
+          {relevantPostsData.map(({ id, title, date, tags }) => {
             return (
               <li className={styles.list__item} key={id}>
-                <PostInfo
+                <PostInformation
                   id={id}
                   title={title}
-                  date={date ?? ""}
+                  date={date}
                   tags={tags}
-                ></PostInfo>
+                ></PostInformation>
               </li>
             );
           })}
@@ -75,7 +75,3 @@ export default function Blog({ allPostsData }: { allPostsData: PostData[] }) {
     </>
   );
 }
-
-Blog.getLayout = function getLayout(page: React.ReactNode) {
-  return <Layout>{page}</Layout>;
-};

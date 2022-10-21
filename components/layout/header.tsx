@@ -1,16 +1,16 @@
 import React, { useRef, useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-
 import { useOnClickOutside } from "../../hooks";
 
 import styles from "./header.module.scss";
 
-export default function Header({ home }: { home: boolean }) {
+type HeaderProps = { home: boolean };
+
+export default function Header({ home }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const node = useRef<HTMLElement>(null);

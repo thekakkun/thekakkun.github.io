@@ -1,31 +1,26 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
+import { GetStaticProps } from "next/types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
-import Tag from "../../components/ui/tag";
+import Tag from "../../components/blog/tag";
 import PostInformation from "../../components/blog/postInfo";
 import { getSortedPostsData, PostData } from "../../lib/posts";
 import styles from "./index.module.scss";
 import React from "react";
 
-export async function getStaticProps() {
-  const allPostsData = JSON.parse(await getSortedPostsData());
-  return {
-    props: {
-      allPostsData,
-    },
-  };
-}
-export default function Blog({ allPostsData }: { allPostsData: PostData[] }) {
+type BlogProps = { allPostsData: PostData[] };
+
+export default function Blog({ allPostsData }: BlogProps) {
   const router = useRouter();
   let query = router.query.tag;
   const allTags = [...new Set(allPostsData.map((post) => post.tags).flat())];
 
   let relevantPostsData: PostData[];
   if (query) {
-    if (typeof query ==='object') {
-      query = query[0]
+    if (typeof query === "object") {
+      query = query[0];
     }
     relevantPostsData = allPostsData.filter((post) =>
       post.tags.includes(query as string)
@@ -75,3 +70,12 @@ export default function Blog({ allPostsData }: { allPostsData: PostData[] }) {
     </>
   );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  const allPostsData = JSON.parse(await getSortedPostsData());
+  return {
+    props: {
+      allPostsData,
+    },
+  };
+};

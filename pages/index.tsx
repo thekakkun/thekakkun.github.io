@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import { GetStaticProps } from "next/types";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
@@ -10,14 +11,14 @@ import Tag from "../components/blog/tag";
 import styles from "./index.module.scss";
 import { useFormattedDate } from "../hooks";
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const allPostsData = JSON.parse(await getSortedPostsData());
   return {
     props: {
       allPostsData,
     },
   };
-}
+};
 
 export default function HomePage({
   allPostsData,

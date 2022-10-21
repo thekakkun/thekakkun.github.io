@@ -1,16 +1,13 @@
 import styles from "./button.module.scss";
 
-export default function Button({
-  text,
-  href,
-  color,
-  newWindow,
-}: {
+type ButtonProps = {
   text: string;
   href: string;
   color: string;
   newWindow: boolean;
-}) {
+};
+
+export default function Button({ text, href, color, newWindow }: ButtonProps) {
   const buttonClass = `button--${color}`;
 
   return (

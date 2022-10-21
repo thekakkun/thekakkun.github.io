@@ -6,7 +6,11 @@ import Footer from "./footer";
 
 import styles from "./layout.module.scss";
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+type LayoutProps = {
+  children: React.ReactNode;
+};
+
+export default function Layout({ children }: LayoutProps) {
   const router = useRouter();
 
   return (

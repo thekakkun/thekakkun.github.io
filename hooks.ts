@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { getPostData, PostData } from "./lib/posts";
+import { PostData } from "./lib/posts";
 
 export const useOnClickOutside = (
   ref: React.RefObject<HTMLElement>,
-  handler: (event: Event) => void
+  handler: (event: MouseEvent) => void
 ) => {
   useEffect(() => {
-    const listener = (event: Event) => {
+    const listener = (event: MouseEvent) => {
       if (!ref.current || ref.current.contains(event.target as Node)) {
         return;
       }

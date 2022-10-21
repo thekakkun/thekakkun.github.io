@@ -6,9 +6,8 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 import { getSortedPostsData, PostData } from "../lib/posts";
-import Layout from "../components/layout/layout";
-import Tag from "../components/ui/tag";
-import styles from "../styles/index.module.scss";
+import Tag from "../components/blog/tag";
+import styles from "./index.module.scss";
 import { useFormattedDate } from "../hooks";
 
 export async function getStaticProps() {

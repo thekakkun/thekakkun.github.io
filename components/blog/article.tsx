@@ -1,5 +1,5 @@
 import React from "react";
-import PostInformation from "../postInfo";
+import PostInformation from "./postInfo";
 import styles from "./article.module.scss";
 
 export default function Article({ children }: { children: React.ReactNode }) {

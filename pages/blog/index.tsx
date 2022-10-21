@@ -4,9 +4,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 import Tag from "../../components/ui/tag";
-import PostInformation from "../../components/postInfo";
+import PostInformation from "../../components/blog/postInfo";
 import { getSortedPostsData, PostData } from "../../lib/posts";
-import styles from "../../styles/blog.module.scss";
+import styles from "./index.module.scss";
 import React from "react";
 
 export async function getStaticProps() {

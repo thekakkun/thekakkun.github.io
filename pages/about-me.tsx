@@ -1,14 +1,13 @@
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Head from "next/head";
 import Image from "next/image";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-
+import Article from "../components/blog/article";
+import Button from "../components/ui/button";
 import { imageLoader } from "../loader";
 import styles from "./about-me.module.scss";
-import Button from "../components/ui/button";
-import Article from "../components/blog/article";
 
 export default function AboutMe() {
   return (

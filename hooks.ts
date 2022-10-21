@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+
 import { PostData } from "./lib/posts";
 
 export const useOnClickOutside = (

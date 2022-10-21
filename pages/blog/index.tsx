@@ -1,14 +1,14 @@
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { GetStaticProps } from "next/types";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import React from "react";
 
-import Tag from "../../components/blog/tag";
 import PostInformation from "../../components/blog/postInfo";
+import Tag from "../../components/blog/tag";
 import { getSortedPostsData, PostData } from "../../lib/posts";
 import styles from "./index.module.scss";
-import React from "react";
 
 type BlogProps = { allPostsData: PostData[] };
 

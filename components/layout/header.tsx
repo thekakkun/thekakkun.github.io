@@ -1,11 +1,11 @@
-import React, { useRef, useState } from "react";
-import { useRouter } from "next/router";
-import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faXmark, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { useOnClickOutside } from "../../hooks";
+import { faBars, faXmark, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import React, { useRef, useState } from "react";
 
+import { useOnClickOutside } from "../../hooks";
 import styles from "./header.module.scss";
 
 type HeaderProps = { home: boolean };

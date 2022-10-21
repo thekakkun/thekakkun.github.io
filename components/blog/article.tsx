@@ -1,6 +1,7 @@
 import React from "react";
-import PostInformation from "./postInfo";
+
 import styles from "./article.module.scss";
+import PostInformation from "./postInfo";
 
 type ArticleProps = { children: React.ReactNode };
 

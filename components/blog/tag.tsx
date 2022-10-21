@@ -1,4 +1,5 @@
 import Link from "next/link";
+
 import styles from "./tag.module.scss";
 
 type TagProps = { tags: string[] };

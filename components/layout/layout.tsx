@@ -1,9 +1,8 @@
-import React, { useState } from "react";
 import { useRouter } from "next/router";
+import React from "react";
 
-import Header from "./header";
 import Footer from "./footer";
-
+import Header from "./header";
 import styles from "./layout.module.scss";
 
 type LayoutProps = {

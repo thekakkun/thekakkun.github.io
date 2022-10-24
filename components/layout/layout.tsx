@@ -13,12 +13,7 @@ export default function Layout({ children }: LayoutProps) {
   const router = useRouter();
 
   return (
-    <div
-      className={`
-      ${styles.body}
-      ${router.route === "/" && styles["body--home"]}
-    `}
-    >
+    <div className={router.route === "/" ? styles.homeBody : styles.body}>
       <Header home={router.route === "/"} />
       <main className={styles.main}>{children}</main>
       <Footer />

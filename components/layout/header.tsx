@@ -16,97 +16,83 @@ export default function Header({ home }: HeaderProps) {
   const node = useRef<HTMLElement>(null);
   useOnClickOutside(node, () => setMenuOpen(false));
 
-  function MenuItem({ route, text }: { route: string; text: string }) {
-    return (
-      <li
-        className={`
-          ${styles.menu__item}
-          ${route === useRouter().route && styles["menu__item--current"]}
-        `}
-      >
-        <Link href={route}>
-          <a onClick={() => setMenuOpen(false)}>{text}</a>
-        </Link>
-      </li>
-    );
-  }
-
   return (
-    <header className={styles.header}>
-      <nav
-        ref={node}
-        className={`
-          ${styles.nav}
-          ${menuOpen && styles["nav--open"]}
-        `}
-      >
-        <div className={styles.main}>
-          <Link href="/">
-            <a
-              onClick={() => setMenuOpen(false)}
-              className={`
-                ${styles.main__home}
-                ${home && styles["main__home--home"]}
-              `}
-            >
-              <h1>Hiroto Kaku</h1>
-            </a>
-          </Link>
-          <button
-            className={`
-              ${styles.main__button}
-              ${home && styles["main__button--home"]}
-            `}
-            onClick={() => setMenuOpen(!menuOpen)}
+    <header
+      ref={node}
+      className={
+        home
+          ? styles.header_home
+          : menuOpen
+          ? styles.header_open
+          : styles.header
+      }
+    >
+      <nav className={styles.nav}>
+        <button
+          className={home ? styles.button_home : styles.button}
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          <FontAwesomeIcon icon={menuOpen ? faXmark : faBars} />
+        </button>
+
+        <Link href="/">
+          <a
+            className={home ? styles.home_home : styles.home}
+            onClick={() => setMenuOpen(false)}
           >
-            <FontAwesomeIcon icon={menuOpen ? faXmark : faBars} />
-          </button>
-        </div>
+            <h1>Hiroto Kaku</h1>
+          </a>
+        </Link>
 
         <ul
-          className={`
-          ${styles.menu}
-          ${menuOpen && styles["menu--open"]}
-          `}
+          className={
+            home
+              ? styles.links_home
+              : menuOpen
+              ? styles.links_open
+              : styles.links
+          }
         >
-          <hr className={styles.menu__item}></hr>
-
-          <MenuItem route="/about-me" text="About Me"></MenuItem>
-          <MenuItem route="/blog" text="Blog"></MenuItem>
-
-          <hr className={styles.menu__item}></hr>
-
-          <li className={styles.menu__item}>
-            <ul className={styles.menu__socials}>
-              <li className={styles.socials__item}>
-                <a
-                  href="https://github.com/thekakkun/"
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  <FontAwesomeIcon icon={faGithub} />
-                </a>
-              </li>
-              <li className={styles.socials__item}>
-                <a
-                  href="https://www.linkedin.com/in/hirotokaku/"
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  <FontAwesomeIcon icon={faLinkedin} />
-                </a>
-              </li>
-              <li className={styles.socials__item}>
-                <a
-                  href="mailto:kaku.hiroto@gmail.com"
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  <FontAwesomeIcon icon={faEnvelope} />
-                </a>
-              </li>
-            </ul>
+          <li>
+            <Link href="/about-me">
+              <a onClick={() => setMenuOpen(false)}>About Me</a>
+            </Link>
           </li>
+          <li>
+            <Link href="/blog">
+              <a onClick={() => setMenuOpen(false)}>Blog</a>
+            </Link>
+          </li>
+
+          <ul className={styles.social}>
+            <li>
+              <a
+                href="https://github.com/thekakkun/"
+                rel="noreferrer"
+                target="_blank"
+              >
+                <FontAwesomeIcon icon={faGithub} />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/hirotokaku/"
+                rel="noreferrer"
+                target="_blank"
+              >
+                <FontAwesomeIcon icon={faLinkedin} />
+              </a>
+            </li>
+            <li>
+              <a
+                href="mailto:kaku.hiroto@gmail.com"
+                rel="noreferrer"
+                target="_blank"
+              >
+                <FontAwesomeIcon icon={faEnvelope} />
+              </a>
+            </li>
+          </ul>
         </ul>
       </nav>
     </header>

@@ -8,7 +8,7 @@ import React from "react";
 import PostInformation from "../../components/blog/postInfo";
 import Tag from "../../components/blog/tag";
 import { getSortedPostsData, PostData } from "../../lib/posts";
-import styles from "./index.module.scss";
+import styles from "./blog.module.scss";
 
 type BlogProps = { allPostsData: PostData[] };
 

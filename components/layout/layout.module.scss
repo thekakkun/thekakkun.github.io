@@ -19,16 +19,6 @@
     background-color: base.$neutral-100;
   }
 
-  &--home {
-    background: base.$green-700 url("/images/bg.jpg") center/cover;
-
-    .main {
-      background: none;
-      position: relative;
-      padding: 0;
-    }
-  }
-
   .backToHome {
     margin-bottom: 30px;
 
@@ -43,5 +33,17 @@
         text-decoration: solid underline;
       }
     }
+  }
+}
+
+.homeBody {
+  @extend .body;
+  background: base.$green-700 url("/images/bg.jpg") center/cover;
+
+  .main {
+    @extend .body, .main;
+    background: none;
+    position: relative;
+    padding: 0;
   }
 }

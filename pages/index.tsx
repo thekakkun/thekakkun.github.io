@@ -1,24 +1,23 @@
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Head from "next/head";
 import Link from "next/link";
+import { GetStaticProps } from "next/types";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-
-import { getSortedPostsData, PostData } from "../lib/posts";
-import Layout from "../components/layout/layout";
-import Tag from "../components/ui/tag";
-import styles from "../styles/index.module.scss";
+import Tag from "../components/blog/tag";
 import { useFormattedDate } from "../hooks";
+import { getSortedPostsData, PostData } from "../lib/posts";
+import styles from "./index.module.scss";
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const allPostsData = JSON.parse(await getSortedPostsData());
   return {
     props: {
       allPostsData,
     },
   };
-}
+};
 
 export default function HomePage({
   allPostsData,

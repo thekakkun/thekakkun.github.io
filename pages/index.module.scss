@@ -1,6 +1,5 @@
 @use "sass:color";
-
-@use "base";
+@use "../styles/base";
 
 .intro {
   @include base.container;

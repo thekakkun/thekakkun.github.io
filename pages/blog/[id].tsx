@@ -1,10 +1,12 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 
-import Article from "../../components/layout/article";
+import Article from "../../components/blog/article";
 import { PostData, getAllPostIds, getPostData } from "../../lib/posts";
 
-export default function Post({ postData }: { postData: PostData }) {
+type PostProps = { postData: PostData };
+
+export default function Post({ postData }: PostProps) {
   return (
     <>
       <Head>

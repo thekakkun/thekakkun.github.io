@@ -3,11 +3,12 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import "highlight.js/scss/base16/solarized-light.scss";
 import "katex/dist/katex.min.css";
 import { AppProps } from "next/app";
-import Layout from "../components/layout/layout";
-config.autoAddCss = false;
 
-import "../styles/reset.css";
+import Layout from "../components/layout/layout";
 import "../styles/_base.scss";
+import "../styles/reset.css";
+
+config.autoAddCss = false;
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (

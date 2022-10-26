@@ -28,6 +28,7 @@
     "lint": "next lint"
   },
   "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^3.4.0",
     "@types/hast": "^2.3.4",
     "@types/js-yaml": "^4.0.5",
     "@types/mdast": "^3.0.10",

@@ -82,20 +82,9 @@ $neutral-900: #1d2021;
   font-family: "Source Code", monospace;
 }
 
-.body {
-  @include sans;
-}
-
 // Layout
-.html {
-  height: 100%;
-  .body {
-    height: 100%;
-
-    #__next {
-      height: 100%;
-    }
-  }
+#__next {
+  min-height: 100vh;
 }
 
 @mixin container {

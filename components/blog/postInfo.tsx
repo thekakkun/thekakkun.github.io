@@ -1,9 +1,9 @@
 import Link from "next/link";
 
-import Tag from "./ui/tag";
+import { useFormattedDate } from "../../hooks";
+import { PostInfo } from "../../lib/posts";
 import styles from "./postInfo.module.scss";
-import { PostInfo } from "../lib/posts";
-import { useFormattedDate } from "../hooks";
+import Tag from "./tag";
 
 export default function PostInformation({ id, title, date, tags }: PostInfo) {
   const postDate = useFormattedDate(date);

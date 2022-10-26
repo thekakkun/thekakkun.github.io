@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/future/image";
 
 import { imageLoader } from "../../loader";
 import styles from "./card.module.scss";
@@ -22,15 +22,14 @@ export default function Card({
     <a className={styles.card} href={href}>
       <p className={styles.title}>{title}</p>
       <p className={styles.subtitle}>{subtitle}</p>
-      <div className={styles.imageWrapper}>
-        <Image
-          className={styles.image}
-          loader={imageLoader}
-          layout="fill"
-          src={image}
-          alt={`Image of ${title}`}
-        ></Image>
-      </div>
+      <Image
+        className={styles.image}
+        loader={imageLoader}
+        width="0"
+        height="0"
+        src={image}
+        alt={`Image of ${title}`}
+      ></Image>
       <p className={styles.info}>{info}</p>
     </a>
   );

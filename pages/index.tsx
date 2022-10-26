@@ -50,6 +50,13 @@ export default function HomePage({
             </Link>
           </li>
           <li className={styles.nav__item}>
+            <Link href="/works">
+              <a>
+                <span>Works</span>→
+              </a>
+            </Link>
+          </li>
+          <li className={styles.nav__item}>
             <Link href="/blog">
               <a>
                 <span>Blog</span>→

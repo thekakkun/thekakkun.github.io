@@ -4,7 +4,7 @@
 .header {
   @include base.container;
   padding-top: 1rem;
-  padding-bottom: 1rem;
+  margin-bottom: 1rem;
 
   @include base.phone {
     background-color: rgb(255, 255, 255, 0);
@@ -111,7 +111,6 @@
       flex-direction: row;
       align-items: flex-end;
       gap: 20px;
-      overflow: hidden;
       transition: all 0.2s ease-in-out;
       width: auto;
       max-width: 350px;
@@ -160,6 +159,11 @@
         color: base.$green-800;
         text-decoration: none;
         font-size: 1.8rem;
+        transition: color 0.2s ease-in-out;
+
+        &:hover {
+          color: base.$green-600;
+        }
       }
 
       hr {

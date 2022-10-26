@@ -39,11 +39,13 @@
 .homeBody {
   @extend .body;
   background: base.$green-700 url("/images/bg.jpg") center/cover;
+  min-height: 100vh;
 
   .main {
     @extend .body, .main;
     background: none;
     position: relative;
     padding: 0;
+    min-height: auto;
   }
 }

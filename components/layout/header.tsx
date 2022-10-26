@@ -39,7 +39,7 @@ export default function Header({ home }: HeaderProps) {
             className={home ? styles.home_home : styles.home}
             onClick={() => setMenuOpen(false)}
           >
-            <h1>Hiroto Kaku</h1>
+            Hiroto Kaku
           </a>
         </Link>
 
@@ -55,6 +55,11 @@ export default function Header({ home }: HeaderProps) {
           <li>
             <Link href="/about-me">
               <a onClick={() => setMenuOpen(false)}>About Me</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/works">
+              <a onClick={() => setMenuOpen(false)}>Works</a>
             </Link>
           </li>
           <li>

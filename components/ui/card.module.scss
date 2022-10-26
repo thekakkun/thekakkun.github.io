@@ -1,0 +1,52 @@
+@use "../../styles/base";
+
+.card {
+  height: fit-content;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid base.$neutral-200;
+  box-shadow: 5px 5px 5px base.$neutral-200;
+  border-radius: 20px;
+  display: block;
+  text-decoration: none;
+  flex: 0 1 calc(33% - 15px);
+  min-width: 220px;
+  color: base.$neutral-900;
+  transition: box-shadow .2s ease-in-out;
+
+  &:hover {
+    box-shadow: 10px 10px 5px base.$neutral-200;
+  }
+
+  @include base.phone {
+    flex: 0 1 calc(100% - 15px);
+  }
+
+  .title {
+    @include base.serif;
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    @include base.serif;
+    font-style: italic;
+    margin-bottom: 20px;
+  }
+
+  .imageWrapper {
+    position: relative;
+    width: 100%;
+    min-height: 200px;
+    margin-bottom: 20px;
+
+    .image {
+      object-fit: contain;
+    }
+  }
+
+  .info {
+    @include base.sans;
+    line-height: 1.2;
+  }
+}

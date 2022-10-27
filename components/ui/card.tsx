@@ -1,4 +1,4 @@
-import Image from "next/future/image";
+import Image from "next/image";
 
 import { imageLoader } from "../../loader";
 import styles from "./card.module.scss";

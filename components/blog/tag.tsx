@@ -15,7 +15,7 @@ export default function Tag({ tags }: TagProps) {
               query: { tag: tag },
             }}
           >
-            <a>{tag}</a>
+            {tag}
           </Link>
         </li>
       ))}

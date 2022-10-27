@@ -1,6 +1,10 @@
 @use "sass:color";
 @use "../styles/base";
 
+$text-color: base.$yellow-300;
+$highlight-color: base.$yellow-900;
+$shadow-color: base.$yellow-600;
+
 .intro {
   @include base.container;
   color: base.$neutral-100;
@@ -8,27 +12,19 @@
   flex-direction: column;
   justify-content: space-between;
 
-  &__title {
+  .about {
     @include base.serif;
     font-size: 3.6rem;
     margin-bottom: 30px;
     line-height: 1.2;
 
     @include base.phone {
-      font-size: 2.4rem;
+      font-size: 2.8rem;
     }
-  }
-
-  &__blurb {
-    font-size: 1.8rem;
-    line-height: 1.2;
-    max-width: 850px;
-    margin-bottom: 10px;
   }
 
   em {
     font-weight: 700;
-    color: base.$green-100;
     font-style: italic;
   }
 }
@@ -38,38 +34,36 @@
   padding-bottom: 30px;
   position: absolute;
   bottom: 0;
-  background: base.$green-900;
+  background: base.$neutral-900;
   background: linear-gradient(
     0deg,
-    color.change(base.$green-900, $alpha: 0.5) 0%,
+    color.change(base.$neutral-900, $alpha: 0.5) 0%,
     rgba(0, 0, 0, 0) 100%
   );
 
-  &__item {
+  .item {
     @include base.serif;
     font-size: 3.6rem;
-    font-weight: 700;
+    font-weight: 900;
     letter-spacing: 0.16em;
     font-style: italic;
-    margin-top: 30px;
+    margin-top: 15px;
 
     @include base.phone {
-      font-size: 2.4rem;
+      font-size: 2.8rem;
       margin-top: 15px;
     }
 
-    a {
-      color: base.$green-100;
+    .link {
+      color: $text-color;
       text-decoration: none;
       display: block;
       width: fit-content;
+      transition: filter 0.2s ease-in-out;
+      filter: drop-shadow(2px 2px 0 $highlight-color);
 
-      span {
-        transition: text-decoration 0.2s ease-in-out;
-        text-decoration: solid underline 0rem base.$green-100;
-        &:hover {
-          text-decoration: solid underline 0.2rem base.$green-100;
-        }
+      &:hover {
+        filter: drop-shadow(2px 2px 0 $shadow-color);
       }
     }
 
@@ -82,13 +76,13 @@
       margin-top: 15px;
       margin-left: 15px;
       display: inline-block;
-      // background-color: color.change(base.$green-900, $alpha: 0.3);
 
-      &__title {
+      .title {
         font-size: 2rem;
         margin-bottom: 5px;
         color: base.$neutral-100;
         text-decoration: none;
+        display: inline-block;
 
         @include base.phone {
           font-size: 1.6rem;
@@ -99,33 +93,28 @@
         }
       }
 
-      &__pubdate {
+      .pubdate {
         font-size: 1rem;
         text-decoration: none;
         color: base.$neutral-100;
       }
-
-      &__tag {
-        margin-top: 10px;
-        font-size: 1rem;
-        li {
-          display: inline-block;
-          padding: 5px 7px;
-          border-radius: 3px;
-          margin-right: 5px;
-          color: base.$neutral-100;
-          background-color: base.$blue-800;
-        }
-      }
     }
   }
 
-  &__social {
+  .social {
     display: flex;
     flex-direction: row;
+    gap: 30px;
+    margin-top: 20px;
 
-    li {
-      margin-right: 30px;
+    .link {
+      color: $text-color;
+      transition: all 0.2s ease-in-out;
+      filter: drop-shadow(2px 2px 0 $highlight-color);
+
+      &:hover {
+        filter: drop-shadow(2px 2px 0 $shadow-color);
+      }
     }
   }
 }

@@ -43,25 +43,13 @@ export default function HomePage({
       <nav className={styles.nav}>
         <ul>
           <li className={styles.nav__item}>
-            <Link href="/about-me">
-              <a>
-                <span>About me</span>→
-              </a>
-            </Link>
+            <Link href="/about-me">About me</Link>
           </li>
           <li className={styles.nav__item}>
-            <Link href="/works">
-              <a>
-                <span>Works</span>→
-              </a>
-            </Link>
+            <Link href="/works">Works</Link>
           </li>
           <li className={styles.nav__item}>
-            <Link href="/blog">
-              <a>
-                <span>Blog</span>→
-              </a>
-            </Link>
+            <Link href="/blog">Blog</Link>
             <div className={styles.blogpost}>
               <div className={styles.blogpost__pubdate}>
                 <em>Latest Post</em>:{" "}
@@ -69,8 +57,11 @@ export default function HomePage({
                   {useFormattedDate(latestPost.date)}
                 </time>
               </div>
-              <Link href={`/blog/${latestPost.id}`}>
-                <a className={styles.blogpost__title}>{latestPost.title} </a>
+              <Link
+                href={`/blog/${latestPost.id}`}
+                className={styles.blogpost__title}
+              >
+                {latestPost.title}
               </Link>
               <Tag tags={latestPost.tags}></Tag>
             </div>

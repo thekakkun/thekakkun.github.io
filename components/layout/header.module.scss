@@ -15,7 +15,7 @@
 
   &_home {
     @extend .header;
-    padding-bottom: 0;
+    margin-bottom: 0;
   }
 
   &_open {
@@ -97,6 +97,7 @@
         @extend .home;
         color: base.$green-100;
         font-size: 3.6rem;
+        line-height: 1.2;
 
         @include base.phone {
           font-size: 2.4rem;

@@ -34,13 +34,12 @@ export default function Header({ home }: HeaderProps) {
           <FontAwesomeIcon icon={menuOpen ? faXmark : faBars} />
         </button>
 
-        <Link href="/">
-          <a
-            className={home ? styles.home_home : styles.home}
-            onClick={() => setMenuOpen(false)}
-          >
-            Hiroto Kaku
-          </a>
+        <Link
+          href="/"
+          className={home ? styles.home_home : styles.home}
+          onClick={() => setMenuOpen(false)}
+        >
+          Hiroto Kaku
         </Link>
 
         <ul
@@ -53,18 +52,18 @@ export default function Header({ home }: HeaderProps) {
           }
         >
           <li>
-            <Link href="/about-me">
-              <a onClick={() => setMenuOpen(false)}>About Me</a>
+            <Link href="/about-me" onClick={() => setMenuOpen(false)}>
+              About Me
             </Link>
           </li>
           <li>
-            <Link href="/works">
-              <a onClick={() => setMenuOpen(false)}>Works</a>
+            <Link href="/works" onClick={() => setMenuOpen(false)}>
+              Works{" "}
             </Link>
           </li>
           <li>
-            <Link href="/blog">
-              <a onClick={() => setMenuOpen(false)}>Blog</a>
+            <Link href="/blog" onClick={() => setMenuOpen(false)}>
+              Blog
             </Link>
           </li>
 

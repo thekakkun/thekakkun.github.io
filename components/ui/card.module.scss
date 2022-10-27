@@ -16,6 +16,10 @@
 
   &:hover {
     box-shadow: 10px 10px 5px base.$neutral-200;
+
+    .title {
+      color: base.$blue-500;
+    }
   }
 
   @include base.phone {
@@ -24,6 +28,8 @@
 
   .title {
     @include base.serif;
+    color: base.$blue-700;
+    transition: color 0.2s ease-in-out;
     font-size: 1.8rem;
     margin-bottom: 5px;
   }

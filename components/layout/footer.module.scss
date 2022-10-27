@@ -3,7 +3,7 @@
 .footer {
   @include base.container;
   @include base.sans;
-  background-color: base.$green-900;
+  background-color: base.$neutral-900;
   color: base.$neutral-100;
   flex-shrink: 0;
 

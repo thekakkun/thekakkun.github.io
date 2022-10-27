@@ -1,10 +1,10 @@
 @use "../../styles/base";
 
 .article {
-  max-width: 1000px;
+  max-width: 850px;
   margin: 0 auto;
   margin-bottom: 30px;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   line-height: 1.3;
 
   &__head {
@@ -15,7 +15,7 @@
     @include base.serif;
     font-size: 1.6rem;
     font-weight: 600;
-    color: base.$blue-900;
+    color: base.$green-700;
     margin-bottom: 5px;
   }
 
@@ -27,13 +27,13 @@
       font-weight: 600;
       margin-top: 10px;
       margin-bottom: 10px;
-      color: base.$blue-800;
+      color: base.$green-600;
     }
 
     h3 {
       font-size: 1.2rem;
       font-style: italic;
-      color: base.$blue-800;
+      color: base.$green-600;
       margin-bottom: 10px;
     }
 
@@ -145,26 +145,6 @@
           }
         }
       }
-    }
-  }
-}
-
-.head {
-  &__pubdate {
-    font-size: 1.1rem;
-  }
-
-  &__tags {
-    margin-bottom: 5px;
-
-    li {
-      display: inline-block;
-      padding: 5px 7px;
-      border-radius: 3px;
-      margin-right: 5px;
-      color: base.$neutral-100;
-      background-color: base.$blue-800;
-      font-size: 1rem;
     }
   }
 }

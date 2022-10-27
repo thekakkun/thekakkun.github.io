@@ -8,7 +8,7 @@
 
   @include base.phone {
     background-color: rgb(255, 255, 255, 0);
-    box-shadow: 5px 5px 20px color.change(base.$green-200, $alpha: 0);
+    box-shadow: 5px 0 20px color.change(base.$blue-900, $alpha: 0);
     transition: all 0.2s ease-in-out;
     position: relative;
   }
@@ -21,7 +21,7 @@
   &_open {
     @extend .header;
     @include base.phone {
-      box-shadow: 5px 5px 20px base.$green-200;
+      box-shadow: 5px 0px 20px base.$blue-700;
       background-color: rgb(255, 255, 255);
       z-index: 10;
     }
@@ -49,7 +49,7 @@
       grid-area: button;
       border: none;
       font-size: 2rem;
-      color: base.$green-700;
+      color: base.$blue-700;
       cursor: pointer;
       transition: margin-right 0.2s ease-in-out, width 0.2s ease-in-out;
       margin-right: 0;
@@ -79,7 +79,7 @@
       grid-area: home;
       align-self: center;
       @include base.serif;
-      color: base.$green-700;
+      color: base.$blue-700;
       font-size: 2.4rem;
       font-weight: 800;
       font-style: italic;
@@ -88,6 +88,10 @@
       margin-right: 40px;
       transition: all 0.2s ease-in-out;
 
+      &:hover {
+        color: base.$blue-500;
+      }
+
       @include base.phone {
         margin-right: 0;
         justify-self: start;
@@ -95,12 +99,16 @@
 
       &_home {
         @extend .home;
-        color: base.$green-100;
+        color: base.$yellow-300;
         font-size: 3.6rem;
-        line-height: 1.2;
+        margin-bottom: 10px;
+
+        &:hover {
+          color: base.$yellow-300;
+        }
 
         @include base.phone {
-          font-size: 2.4rem;
+          font-size: 2.8rem;
         }
       }
     }
@@ -157,13 +165,13 @@
 
       a {
         @include base.sans;
-        color: base.$green-800;
+        color: base.$blue-700;
         text-decoration: none;
         font-size: 1.8rem;
         transition: color 0.2s ease-in-out;
 
         &:hover {
-          color: base.$green-600;
+          color: base.$blue-500;
         }
       }
 

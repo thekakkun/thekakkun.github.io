@@ -34,42 +34,46 @@ export default function HomePage({
       </Head>
 
       <div className={styles.intro}>
-        <h1 className={styles.intro__title}>
-          Hi, I&apos;m a<br></br>
+        <h1 className={styles.about}>
           <em>Software&nbsp;dev</em> &amp;&nbsp;
           <em>UX&nbsp;researcher</em>
         </h1>
       </div>
+
       <nav className={styles.nav}>
         <ul>
-          <li className={styles.nav__item}>
-            <Link href="/about-me">About me</Link>
+          <li className={styles.item}>
+            <Link href="/about-me" className={styles.link}>
+              About me
+            </Link>
           </li>
-          <li className={styles.nav__item}>
-            <Link href="/works">Works</Link>
+          <li className={styles.item}>
+            <Link href="/works" className={styles.link}>
+              Works
+            </Link>
           </li>
-          <li className={styles.nav__item}>
-            <Link href="/blog">Blog</Link>
-            <div className={styles.blogpost}>
-              <div className={styles.blogpost__pubdate}>
+          <li className={styles.item}>
+            <Link href="/blog" className={styles.link}>
+              Blog
+            </Link>
+            {/* <div className={styles.blogpost}>
+              <div className={styles.pubdate}>
                 <em>Latest Post</em>:{" "}
                 <time dateTime={latestPost.date}>
                   {useFormattedDate(latestPost.date)}
                 </time>
               </div>
-              <Link
-                href={`/blog/${latestPost.id}`}
-                className={styles.blogpost__title}
-              >
+              <Link href={`/blog/${latestPost.id}`} className={styles.title}>
                 {latestPost.title}
               </Link>
               <Tag tags={latestPost.tags}></Tag>
-            </div>
+            </div> */}
           </li>
-          <li className={styles.nav__item}>
-            <ul className={styles.nav__social}>
+          <li className={styles.item}>
+            <ul className={styles.social}>
               <li>
                 <a
+                  className={styles.link}
                   href="https://github.com/thekakkun/"
                   rel="noreferrer"
                   target="_blank"
@@ -79,6 +83,7 @@ export default function HomePage({
               </li>
               <li>
                 <a
+                  className={styles.link}
                   href="https://www.linkedin.com/in/hirotokaku/"
                   rel="noreferrer"
                   target="_blank"
@@ -88,6 +93,7 @@ export default function HomePage({
               </li>
               <li>
                 <a
+                  className={styles.link}
                   href="mailto:kaku.hiroto@gmail.com"
                   rel="noreferrer"
                   target="_blank"

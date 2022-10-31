@@ -1,0 +1,15 @@
+@use "../../styles/base";
+
+.layout {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(3, 1fr);
+
+  @include base.tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include base.phone {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

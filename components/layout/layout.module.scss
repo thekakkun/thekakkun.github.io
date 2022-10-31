@@ -38,7 +38,7 @@
 
 .homeBody {
   @extend .body;
-  background: base.$green-700 url("/images/bg.jpg") center/cover;
+  background: base.$neutral-700 url("/images/bg.jpg") center/cover;
   min-height: 100vh;
 
   .main {

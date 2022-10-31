@@ -2,8 +2,8 @@
 @use "../styles/base";
 
 $text-color: base.$neutral-100;
-$highlight-color: base.$green-600;
-$shadow-color: base.$green-300;
+$highlight-color: base.$blue-500;
+$shadow-color: base.$blue-300;
 
 .intro {
   @include base.container;

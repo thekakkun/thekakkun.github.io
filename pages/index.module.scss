@@ -1,9 +1,9 @@
 @use "sass:color";
 @use "../styles/base";
 
-$text-color: base.$yellow-300;
-$highlight-color: base.$yellow-900;
-$shadow-color: base.$yellow-600;
+$text-color: base.$neutral-100;
+$highlight-color: base.$green-600;
+$shadow-color: base.$green-300;
 
 .intro {
   @include base.container;

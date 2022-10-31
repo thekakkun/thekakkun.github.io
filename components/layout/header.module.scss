@@ -99,12 +99,13 @@
 
       &_home {
         @extend .home;
-        color: base.$yellow-300;
+        color: base.$neutral-100;
+        filter: drop-shadow(2px 2px 0 base.$green-600);
         font-size: 3.6rem;
         margin-bottom: 10px;
 
         &:hover {
-          color: base.$yellow-300;
+          color: base.$neutral-100;
         }
 
         @include base.phone {

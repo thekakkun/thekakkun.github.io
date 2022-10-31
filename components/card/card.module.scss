@@ -13,6 +13,8 @@
   min-width: 220px;
   color: base.$neutral-900;
   transition: box-shadow 0.2s ease-in-out;
+  position: relative;
+  top: 0;
 
   &:hover {
     box-shadow: 10px 10px 5px base.$neutral-200;

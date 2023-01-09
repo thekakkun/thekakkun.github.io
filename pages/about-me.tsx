@@ -71,7 +71,7 @@ export default function AboutMe() {
                 <li>
                   <Button
                     text="Get my resume"
-                    href="https://onedrive.live.com/download?cid=8781DAED1A9AA5B5&resid=8781DAED1A9AA5B5%21539430&authkey=AMUNkvnFPSgxaUU"
+                    href="https://1drv.ms/b/s!ArWlmhrt2oGHqoZ0YvIajamM5f8yVQ?e=CJyD1z"
                     color="blue"
                     newWindow
                   />

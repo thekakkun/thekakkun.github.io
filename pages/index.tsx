@@ -1,5 +1,5 @@
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faFile, faFilePdf } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Head from "next/head";
 import Link from "next/link";
@@ -89,6 +89,16 @@ export default function HomePage({
                   target="_blank"
                 >
                   <FontAwesomeIcon icon={faLinkedin} />
+                </a>
+              </li>
+              <li>
+                <a
+                  className={styles.link}
+                  href="https://1drv.ms/b/s!ArWlmhrt2oGHqoZ0YvIajamM5f8yVQ?e=CJyD1z"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  <FontAwesomeIcon icon={faFilePdf} />
                 </a>
               </li>
               <li>

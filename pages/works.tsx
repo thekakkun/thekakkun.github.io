@@ -5,11 +5,18 @@ import styles from "./works.module.scss";
 
 const worksData = [
   {
+    href: "https://github.com/thekakkun/over-yonder",
+    image: "",
+    title: "Over Yonder (in progress)",
+    subtitle: "A geography game, 2022",
+    info: "Geography game for smartphones with map visualizations powered by D3.js. Implemented in React.",
+  },
+  {
     href: "https://github.com/thekakkun/speed-snek",
     image: "works/speed-snek.png",
     title: "Speed Snek",
     subtitle: "A HTML canvas game, 2022",
-    info: "A mash-up of the classic computer game Snake and the 1994 movie Speed starring Keanu Reeves and Sandra Bullock.",
+    info: "A spin-off of the classic game Snake, coded in vanilla TypeScript using OOP patterns to manage game objects and state.",
   },
   {
     href: "https://github.com/thekakkun/thekakkun.github.io",

@@ -6,16 +6,16 @@ import styles from "./works.module.scss";
 const worksData = [
   {
     href: "https://github.com/thekakkun/over-yonder",
-    image: "",
-    title: "Over Yonder (in progress)",
-    subtitle: "A geography game, 2022",
-    info: "Geography game for smartphones with map visualizations powered by D3.js. Implemented in React.",
+    image: "works/over-yonder.png",
+    title: "Over Yonder",
+    subtitle: "smartphone game, 2023",
+    info: "Location-based geography game for smartphones with map visualizations powered by D3.js.",
   },
   {
     href: "https://github.com/thekakkun/speed-snek",
     image: "works/speed-snek.png",
     title: "Speed Snek",
-    subtitle: "A HTML canvas game, 2022",
+    subtitle: "HTML canvas game, 2022",
     info: "A spin-off of the classic game Snake, coded in vanilla TypeScript using OOP patterns to manage game objects and state.",
   },
   {
@@ -29,14 +29,14 @@ const worksData = [
     href: "https://github.com/thekakkun/Callisto",
     image: "works/callisto.jpg",
     title: "Callisto",
-    subtitle: "An IoT VFD clock, 2021",
+    subtitle: "IoT VFD clock, 2021",
     info: "Electrical, hardware, and software design for a desk clock that uses a Russian IV-18 VFD tube .",
   },
   {
     href: "https://github.com/thekakkun/Hyperion/",
     image: "works/hyperion.jpg",
     title: "Hyperion",
-    subtitle: "A nixie tube clock, 2016",
+    subtitle: "nixie tube clock, 2016",
     info: "Custom case and  electronics to add GPS time syncing fuctionality to a nixie clock kit.",
   },
 ];
